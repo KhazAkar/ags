@@ -1,0 +1,3 @@
+FROM scratch
+COPY ./autonomous_gardening /
+CMD ["/autonomous_gardening"]
