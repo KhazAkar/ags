@@ -1,0 +1,3 @@
+--- Slider ---
+    * range-slider-input: https://www.npmjs.com/package/range-slider-input
+        instalation with npm in react directory: /*npm install range-slider-input*/
