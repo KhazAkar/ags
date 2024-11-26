@@ -1,0 +1,77 @@
+.inputContainer {
+  min-width: 250px;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 13px;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 13px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__field:not(:placeholder-shown) ~ .form__label {
+  font-size: 13px; /* Retain font size */
+  font-weight: 700;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 13px;
+  color: rgb(231, 231, 231);
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 13px;
+  color: rgb(24, 202, 143);
+  font-weight:700;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 3px;
+  border-image: linear-gradient(to right, rgb(17, 153, 142), rgb(56, 239, 125));
+  border-image-slice: 1;
+}
+
+/* Reset input styles for invalid/required states */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
+}
+
+/* Error state styling */
+.error .form__label
+{
+    color: rgb(255, 0, 106);
+}
