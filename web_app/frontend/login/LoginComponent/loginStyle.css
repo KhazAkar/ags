@@ -1,0 +1,32 @@
+.LoginWindow
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+
+    min-width: 400px;
+    width: 400px;
+
+    min-height: 500px;
+    height: 500px;
+
+    border-radius: 5px;
+    background-color: rgba(39, 39, 39,0.9); /*#4C4E5D*/
+    align-items: center;
+    justify-items: center;
+}
+
+.LoginGrid
+{
+    display: grid;
+    height: 80%;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 30% 40%;
+    padding: 15px;
+}
+
+.buttonGrid
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
