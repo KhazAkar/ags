@@ -1247,6 +1247,28 @@
 			)
 		)
 	)
+	(text "LaFrite schematic PDF"
+		(exclude_from_sim no)
+		(at 235.712 83.058 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://drive.google.com/file/d/1n5IA50mF469o2ScHC__l3PRteKGatqGe/view")
+		)
+		(uuid "c8ee3e73-951c-4708-a74d-1d5be520fa87")
+	)
+	(text "LaFrite Pinout sheet"
+		(exclude_from_sim no)
+		(at 235.458 80.772 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://docs.google.com/spreadsheets/d/1pAtz8v2gnkkrAdNrhhrpICkTNQ8cd1ObduUsphcbqp4/edit?gid=0#gid")
+		)
+		(uuid "d1e86303-92e8-4f95-a216-3eedb2ba2de8")
+	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x20_Odd_Even")
 		(at 233.68 52.07 0)
