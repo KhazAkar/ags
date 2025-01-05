@@ -1247,6 +1247,136 @@
 			)
 		)
 	)
+	(wire
+		(pts
+			(xy 218.44 57.15) (xy 228.6 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "078f7df2-e366-4598-85fe-398b7bc20a31")
+	)
+	(wire
+		(pts
+			(xy 218.44 62.23) (xy 228.6 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63c3e717-4ec0-4fe4-8a9f-a9244ceb2d68")
+	)
+	(wire
+		(pts
+			(xy 218.44 52.07) (xy 228.6 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e82577d-7182-42e4-a09d-0c869bc6e05b")
+	)
+	(wire
+		(pts
+			(xy 241.3 39.37) (xy 252.73 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "710933e3-f283-49d0-a265-e2ea34fd6034")
+	)
+	(wire
+		(pts
+			(xy 241.3 57.15) (xy 251.46 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b033e3ff-8978-4810-ab44-82027e46f49b")
+	)
+	(wire
+		(pts
+			(xy 218.44 54.61) (xy 228.6 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b19a3195-b754-45bf-90d5-0c91c4c2864c")
+	)
+	(wire
+		(pts
+			(xy 241.3 62.23) (xy 251.46 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c459a181-9226-46fb-8064-dd5d14727980")
+	)
+	(wire
+		(pts
+			(xy 241.3 54.61) (xy 251.46 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e49f1e06-38c8-4ae4-bde3-22b6f0b3d5ee")
+	)
+	(wire
+		(pts
+			(xy 241.3 36.83) (xy 252.73 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6c75029-99ee-4ba3-9546-68acf627fbb8")
+	)
+	(wire
+		(pts
+			(xy 218.44 72.39) (xy 228.6 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f46b6f63-9916-4b52-984f-ece4e5d06f52")
+	)
+	(wire
+		(pts
+			(xy 241.3 67.31) (xy 251.46 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb4e6b38-bbef-4667-8776-5bc975f58d1c")
+	)
+	(text "For fan"
+		(exclude_from_sim no)
+		(at 221.742 69.342 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "05f98f41-af0d-45c3-bdea-a98831988e60")
+	)
+	(text "For water\npump"
+		(exclude_from_sim no)
+		(at 256.794 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6728cee7-389b-41d3-8131-2ec1e027c189")
+	)
 	(text "LaFrite schematic PDF"
 		(exclude_from_sim no)
 		(at 235.712 83.058 0)
@@ -1268,6 +1398,127 @@
 			(href "https://docs.google.com/spreadsheets/d/1pAtz8v2gnkkrAdNrhhrpICkTNQ8cd1ObduUsphcbqp4/edit?gid=0#gid")
 		)
 		(uuid "d1e86303-92e8-4f95-a216-3eedb2ba2de8")
+	)
+	(label "SPI_MISO"
+		(at 218.44 54.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "09a58ed9-b868-4b27-a006-ad029a49b52b")
+	)
+	(label "PWM_F"
+		(at 218.44 72.39 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0f47f102-6315-4eef-8a1d-71b503b7f16c")
+	)
+	(label "UART_TX_A"
+		(at 252.73 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1d09a49c-7194-4353-be9b-917cc424c23a")
+	)
+	(label "I2C_SDA"
+		(at 218.44 62.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2163636d-ce0e-4df7-a325-72db70e1c723")
+	)
+	(label "SPI_SS0"
+		(at 251.46 57.15 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "26a7f149-739f-49a5-80a3-be146ccf7194")
+	)
+	(label "PWM_D"
+		(at 251.46 67.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3451edda-abaa-41f0-b043-b1f36f178a20")
+	)
+	(label "I2C_SCK"
+		(at 251.46 62.23 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "54ded63d-e587-45d1-9b2e-275fb0333abd")
+	)
+	(label "UART_RX_A"
+		(at 252.73 39.37 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "641dd05a-402f-4006-bbe0-c61a406d1855")
+	)
+	(label "SPI_MOSI"
+		(at 218.44 52.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7b7e4e9b-677e-44e3-bc2f-959b3f7fb11d")
+	)
+	(label "LIGHT_SW"
+		(at 251.46 54.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b32becfc-9211-40ac-bd6b-004315b456a3")
+	)
+	(label "SPI_SCLK"
+		(at 218.44 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ed470575-dd93-4411-98d9-440eee261f0f")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x20_Odd_Even")
