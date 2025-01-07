@@ -1,0 +1,92 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "294a7a87-2901-4567-a917-75ac48ca5f17")
+	(paper "A4")
+	(lib_symbols)
+	(hierarchical_label "SPI_MISO"
+		(shape input)
+		(at 151.13 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "04bb0372-3724-4d71-a473-867550a94c68")
+	)
+	(hierarchical_label "UART_TX_A"
+		(shape input)
+		(at 151.13 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "105ea4ee-fa9a-4e4f-a147-e0e94714203a")
+	)
+	(hierarchical_label "SARADC_CH0"
+		(shape input)
+		(at 151.13 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "49977ef8-e677-49b0-8dfc-6601b3a7eba1")
+	)
+	(hierarchical_label "SPI_SCLK"
+		(shape input)
+		(at 151.13 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6791c036-24c3-4138-a9fb-b6041da3adff")
+	)
+	(hierarchical_label "SPI_MOSI"
+		(shape input)
+		(at 151.13 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c4e971f7-d705-4e03-a2a1-2c3aa261e779")
+	)
+	(hierarchical_label "SPI_SS0"
+		(shape input)
+		(at 151.13 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dcf4632e-e412-4e03-bc4a-8cad1e397042")
+	)
+	(hierarchical_label "UART_RX_A"
+		(shape input)
+		(at 151.13 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e1fc268c-7fee-4064-b417-daff6249872b")
+	)
+)
