@@ -1,0 +1,38 @@
+.timerComponentContainer
+{
+    background-color: rgb(19, 19, 19);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20fr 20fr;
+    overflow: auto; /* Prevent any overflow from showing */
+}
+
+.timerDisplay
+{
+    width: 100%;
+    overflow: hidden; /* Prevent any overflow from showing */
+    word-break: break-all; /* Break words at any character */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.5fr;
+
+}
+
+.upperText
+{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.underText
+{
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
