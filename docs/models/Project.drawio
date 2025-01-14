@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4" pages="5">
   <diagram name="OverallView" id="iMTkxeB2DGwpaGkPtLTU">
-    <mxGraphModel dx="1354" dy="915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -112,15 +112,15 @@
             <mxPoint x="318" y="140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <UserObject label="https://allegro.pl/oferta/max31855-modul-pomiaru-temperatury-termopara-typ-k-15336634165" link="https://allegro.pl/oferta/max31855-modul-pomiaru-temperatury-termopara-typ-k-15336634165" id="Fv7HclucjOYoFXcrwZzk-1">
+        <UserObject label="https://allegro.pl/oferta/czujnik-temperatury-ds18b20-wodoodporny-przewod-3m-sonoff-supla-shelly-15360194329" link="https://allegro.pl/oferta/max31855-modul-pomiaru-temperatury-termopara-typ-k-15336634165" id="Fv7HclucjOYoFXcrwZzk-1">
           <mxCell style="text;whiteSpace=wrap;" parent="1" vertex="1">
             <mxGeometry x="681" y="450" width="560" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="Fv7HclucjOYoFXcrwZzk-2" value="Thermocouple&lt;div&gt;for&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;soil&lt;/span&gt;&lt;/div&gt;&lt;div&gt;measurements&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="541" y="420" width="100" height="100" as="geometry" />
+        <mxCell id="Fv7HclucjOYoFXcrwZzk-2" value="DS18B20 for&lt;div&gt;soil&lt;/div&gt;&lt;div&gt;temperature&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="541" y="435" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Fv7HclucjOYoFXcrwZzk-4" value="SPI" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="Fv7HclucjOYoFXcrwZzk-4" value="1W" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="481" y="450" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="EX52YoFw5Hgh2PZUWN-a-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="EX52YoFw5Hgh2PZUWN-a-1" target="1vGaxtz1WK9ZgDREx-5c-1" edge="1">
@@ -149,8 +149,8 @@
           <mxGeometry x="250" y="442.5" width="60" height="30" as="geometry" />
         </mxCell>
         <UserObject label="https://allegro.pl/oferta/modul-konwerter-uart-ttl-do-rs485-15089281395" link="https://allegro.pl/oferta/modul-konwerter-uart-ttl-do-rs485-15089281395" id="kMHOxgFwc_kGW9Pi-VJU-1">
-          <mxCell style="text;whiteSpace=wrap;" vertex="1" parent="1">
-            <mxGeometry x="670" y="390" width="470" height="40" as="geometry" />
+          <mxCell style="text;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="680" y="390" width="470" height="40" as="geometry" />
           </mxCell>
         </UserObject>
       </root>
@@ -328,13 +328,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-1" value="Serial interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="70" width="120" height="60" as="geometry" />
+          <mxGeometry x="410" y="130" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-2" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-2" value="I2C interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="150" width="120" height="60" as="geometry" />
+          <mxGeometry x="410" y="180" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-5" value="MQTT Broker" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="10" y="50" width="120" height="80" as="geometry" />
@@ -343,7 +343,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-17" value="Platform Handler" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="290" width="120" height="60" as="geometry" />
+          <mxGeometry x="410" y="320" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="HBIGmiQNNAohoxz20zif-19" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -370,10 +370,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-1" value="ADC" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="220" width="50" height="60" as="geometry" />
+          <mxGeometry x="410" y="240" width="50" height="60" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-2" value="Parser" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="480" y="220" width="50" height="60" as="geometry" />
+          <mxGeometry x="480" y="240" width="50" height="60" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-5" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;ADC - Gravity&lt;/h1&gt;&lt;p&gt;This module would be responsible for reading soil moisture levels&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="500" y="460" width="180" height="120" as="geometry" />
@@ -406,10 +406,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-26" value="GPIO control" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="370" width="120" height="60" as="geometry" />
+          <mxGeometry x="410" y="380" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-28" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;GPIO control&lt;/h1&gt;&lt;p&gt;This module would be responsible forcontrolling switches, fan, lights etc, based on external conditions.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="290" y="740" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="RYmFaY8Xn2KupPgh-LN7-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;1-Wire interface&lt;/h1&gt;&lt;p&gt;Responsible for soil temperature monitoring, using DS18B20&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="770" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RYmFaY8Xn2KupPgh-LN7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="RYmFaY8Xn2KupPgh-LN7-2" target="R2RZIZFhC3APE5sBShbt-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RYmFaY8Xn2KupPgh-LN7-2" value="1-Wire interface" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="70" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -426,7 +435,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="DuHhoj1_NL8Pmu-tIuTA" name="DeviceDetailed">
-    <mxGraphModel dx="880" dy="595" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -613,7 +622,7 @@
         <mxCell id="sEcjuV9ZT-egJz2rtgYQ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="sEcjuV9ZT-egJz2rtgYQ-1" target="NV4eZMmfZnXYHG33Osy6-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sEcjuV9ZT-egJz2rtgYQ-1" value="SPI&lt;br&gt;MAX31855" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="sEcjuV9ZT-egJz2rtgYQ-1" value="1W DS18B20" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="791.25" width="80" height="35" as="geometry" />
         </mxCell>
         <mxCell id="bWuKEnOam1t79VE8P0-V-1" value="video_feed" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
