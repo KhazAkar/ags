@@ -4,12 +4,9 @@ import {InitData} from './Context/InitContextData.jsx';
 import TimerComponent from './TimerComponent/TimerComponent.jsx';
 import PowerConsumptionComponent from './PowerConsumptionComponent/PowerConsumptionComponent.jsx';
 import ThermometerComponent from './ThermometerComponent/ThermometerComponent.jsx';
-<<<<<<< HEAD
 import NPKComponent from './NPKComponent/NPKComponent.jsx';
-=======
 import HumidityComponent from './HumidityComponent/HumidityComponent.jsx';
 import AirHumidityComponent from './AirHumidityComponent/AirHumidityComponent.jsx';
->>>>>>> 7087337 (HumidityComponents for Air and Soil has been created, They work but need icons(must find free or make a whipround for paid options)
 
 function MainComponent() {
   return (
@@ -70,61 +67,6 @@ function MainComponent() {
         ],
       },
 
-<<<<<<< HEAD
-      "NPKJSON":
-      {
-        "totalPerCycle": [
-          {"timeLabel": "2025-01-01T12:45:23",
-            "value":{
-              "n": 134,
-              "p": 221,
-              "k": 845
-            }
-          },
-          {"timeLabel": "2025-01-02T13:21:15",
-            "value":{
-              "n": 53,
-              "p": 15,
-              "k": 67
-            }
-          },
-          {"timeLabel": "2025-01-03T15:35:46",
-            "value":{
-              "n": 134,
-              "p": 221,
-              "k": 545
-            }
-          },
-          {"timeLabel": "2025-01-01T12:45:23",
-            "value":{
-              "n": 334,
-              "p": 995,
-              "k": 475
-            }
-          },
-          {"timeLabel": "2025-01-01T12:45:23",
-            "value":{
-              "n": 125,
-              "p": 421,
-              "k": 512
-            }
-          },
-          {"timeLabel": "2025-01-01T12:45:23",
-            "value":{
-              "n": 334,
-              "p": 124,
-              "k": 475
-            }
-          },
-          {"timeLabel": "2025-01-01T12:45:23",
-            "value":{
-              "n": 384,
-              "p": 291,
-              "k": 475
-            }
-          },
-
-=======
       "groundHumidityJSON":
       {
         "totalPerCycle": [
@@ -176,11 +118,64 @@ function MainComponent() {
           {"timeLabel": "2025-01-01T12:45:23",
             "value": 26
           },
->>>>>>> 7087337 (HumidityComponents for Air and Soil has been created, They work but need icons(must find free or make a whipround for paid options)
+        ]
+      },
+
+      "NPKJSON":
+      {
+        "totalPerCycle": [
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 134,
+              "p": 221,
+              "k": 845
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 53,
+              "p": 15,
+              "k": 67
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 134,
+              "p": 221,
+              "k": 545
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 334,
+              "p": 995,
+              "k": 475
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 125,
+              "p": 421,
+              "k": 512
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 334,
+              "p": 124,
+              "k": 475
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 384,
+              "p": 291,
+              "k": 475
+            }
+          },
+
         ]
       }
-
-
 
     }}>
 
