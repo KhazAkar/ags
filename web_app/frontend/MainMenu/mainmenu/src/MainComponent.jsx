@@ -4,7 +4,12 @@ import {InitData} from './Context/InitContextData.jsx';
 import TimerComponent from './TimerComponent/TimerComponent.jsx';
 import PowerConsumptionComponent from './PowerConsumptionComponent/PowerConsumptionComponent.jsx';
 import ThermometerComponent from './ThermometerComponent/ThermometerComponent.jsx';
+<<<<<<< HEAD
 import NPKComponent from './NPKComponent/NPKComponent.jsx';
+=======
+import HumidityComponent from './HumidityComponent/HumidityComponent.jsx';
+import AirHumidityComponent from './AirHumidityComponent/AirHumidityComponent.jsx';
+>>>>>>> 7087337 (HumidityComponents for Air and Soil has been created, They work but need icons(must find free or make a whipround for paid options)
 
 function MainComponent() {
   return (
@@ -65,6 +70,7 @@ function MainComponent() {
         ],
       },
 
+<<<<<<< HEAD
       "NPKJSON":
       {
         "totalPerCycle": [
@@ -118,8 +124,63 @@ function MainComponent() {
             }
           },
 
+=======
+      "groundHumidityJSON":
+      {
+        "totalPerCycle": [
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 30
+          },
+          {"timeLabel": "2025-01-02T13:21:15",
+            "value": 57
+          },
+          {"timeLabel": "2025-01-03T15:35:46",
+            "value": 34
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 33
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 39
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 29
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 26
+          },
+        ]
+      },
+
+      "airHumidityJSON":
+      {
+        "totalPerCycle": [
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 30
+          },
+          {"timeLabel": "2025-01-02T13:21:15",
+            "value": 57
+          },
+          {"timeLabel": "2025-01-03T15:35:46",
+            "value": 34
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 33
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 39
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 29
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value": 26
+          },
+>>>>>>> 7087337 (HumidityComponents for Air and Soil has been created, They work but need icons(must find free or make a whipround for paid options)
         ]
       }
+
+
 
     }}>
 
@@ -155,13 +216,13 @@ function MainComponent() {
         <div className="centerGrid"> 
 
           <div className="content1">
-
+            <AirHumidityComponent />
           </div>
           <div className="content1">
             <PowerConsumptionComponent/>
           </div>
           <div className="content1">
-            
+            <HumidityComponent/>
           </div>
 
           <div className="content2a">
