@@ -75,14 +75,14 @@ function MainComponent() {
               "k": 845
             }
           },
-          {"timeLabel": "2025-01-01T12:45:23",
+          {"timeLabel": "2025-01-02T13:21:15",
             "value":{
               "n": 53,
               "p": 15,
               "k": 67
             }
           },
-          {"timeLabel": "2025-01-01T12:45:23",
+          {"timeLabel": "2025-01-03T15:35:46",
             "value":{
               "n": 134,
               "p": 221,
