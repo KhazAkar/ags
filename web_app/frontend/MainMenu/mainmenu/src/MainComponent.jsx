@@ -4,6 +4,7 @@ import {InitData} from './Context/InitContextData.jsx';
 import TimerComponent from './TimerComponent/TimerComponent.jsx';
 import PowerConsumptionComponent from './PowerConsumptionComponent/PowerConsumptionComponent.jsx';
 import ThermometerComponent from './ThermometerComponent/ThermometerComponent.jsx';
+import NPKComponent from './NPKComponent/NPKComponent.jsx';
 
 function MainComponent() {
   return (
@@ -62,6 +63,62 @@ function MainComponent() {
           18.86, 32.8, 29.6, 19.94, 43.48, 25.71, 39.26, 34.37, 26.26, 35.91
 
         ],
+      },
+
+      "NPKJSON":
+      {
+        "totalPerCycle": [
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 134,
+              "p": 221,
+              "k": 845
+            }
+          },
+          {"timeLabel": "2025-01-02T13:21:15",
+            "value":{
+              "n": 53,
+              "p": 15,
+              "k": 67
+            }
+          },
+          {"timeLabel": "2025-01-03T15:35:46",
+            "value":{
+              "n": 134,
+              "p": 221,
+              "k": 545
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 334,
+              "p": 995,
+              "k": 475
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 125,
+              "p": 421,
+              "k": 512
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 334,
+              "p": 124,
+              "k": 475
+            }
+          },
+          {"timeLabel": "2025-01-01T12:45:23",
+            "value":{
+              "n": 384,
+              "p": 291,
+              "k": 475
+            }
+          },
+
+        ]
       }
 
     }}>
@@ -108,7 +165,7 @@ function MainComponent() {
           </div>
 
           <div className="content2a">
-            
+            <NPKComponent/>
           </div>
 
           <div className="content2b">
