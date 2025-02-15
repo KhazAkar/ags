@@ -15,10 +15,10 @@ import './HumidityComponentStyle.css';
 
 export default function HumidityComponent({children})
 {
-    let {groundHumidityJSON} = useContext(InitData);
+    let {groundHumidity} = useContext(InitData);
     let tensionRef = useRef(0.0);
 
-    let lenghtOfArray = groundHumidityJSON.totalPerCycle.length;
+    let lenghtOfArray = groundHumidity.totalPerCycle.length;
 
     let chartConfig= {
         options: { 
@@ -34,7 +34,7 @@ export default function HumidityComponent({children})
                 y: {
                     
                     min: 0,// Ensure the y-axis starts at or close to 0
-                    max: (Math.max( groundHumidityJSON.totalPerCycle.map((obj) => {
+                    max: (Math.max( groundHumidity.totalPerCycle.map((obj) => {
                         return Math.max(obj.value.n, obj.value.p, obj.value.k)
                     }
                     ))
@@ -76,10 +76,10 @@ export default function HumidityComponent({children})
     
           data: {
         
-            labels: groundHumidityJSON.totalPerCycle.map(element => element.timeLabel),
+            labels: groundHumidity.totalPerCycle.map(element => element.timeLabel),
             datasets: [
               {
-                data:  groundHumidityJSON.totalPerCycle.map(element => element.value),
+                data:  groundHumidity.totalPerCycle.map(element => element.value),
                 borderColor: 'rgb(15, 207, 255)',
                 backgroundColor: 'rgb(33, 82, 187)',
                 tension: tensionRef.current,
@@ -103,7 +103,7 @@ export default function HumidityComponent({children})
                 <div className='SecondContainerGrid'>
                     <div className='Humidityisplay'>
                         <div>CURRENT % OF WATER IN SOIL</div>
-                        <div>{groundHumidityJSON.totalPerCycle[lenghtOfArray-1].value}</div>
+                        <div>{groundHumidity.totalPerCycle[lenghtOfArray-1].value}</div>
                     </div>
                 </div>
             </div>

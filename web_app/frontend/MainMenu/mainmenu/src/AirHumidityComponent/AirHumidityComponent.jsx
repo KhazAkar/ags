@@ -15,10 +15,10 @@ import './AirHumidityComponentStyle.css';
 
 export default function AirHumidityComponent({children})
 {
-    let {airHumidityJSON} = useContext(InitData);
+    let {airHumidity} = useContext(InitData);
     let tensionRef = useRef(0.0);
 
-    let lenghtOfArray = airHumidityJSON.totalPerCycle.length;
+    let lenghtOfArray = airHumidity.totalPerCycle.length;
 
     let chartConfig= {
         options: { 
@@ -33,7 +33,7 @@ export default function AirHumidityComponent({children})
                 y: {
                     
                     min: 0,// Ensure the y-axis starts at or close to 0
-                    max: (Math.max( airHumidityJSON.totalPerCycle.map((obj) => {
+                    max: (Math.max( airHumidity.totalPerCycle.map((obj) => {
                         return Math.max(obj.value.n, obj.value.p, obj.value.k)
                     }
                     ))
@@ -75,10 +75,10 @@ export default function AirHumidityComponent({children})
     
           data: {
         
-            labels: airHumidityJSON.totalPerCycle.map(element => element.timeLabel),
+            labels: airHumidity.totalPerCycle.map(element => element.timeLabel),
             datasets: [
               {
-                data:  airHumidityJSON.totalPerCycle.map(element => element.value),
+                data:  airHumidity.totalPerCycle.map(element => element.value),
                 borderColor: 'rgb(15, 207, 255)',
                 backgroundColor: 'rgb(33, 82, 187)',
                 tension: tensionRef.current,
@@ -102,7 +102,7 @@ export default function AirHumidityComponent({children})
                 <div className='SecondContainerGrid'>
                     <div className='Humidityisplay'>
                         <div>CURRENT %RH OF WATER IN AIR</div>
-                        <div>{airHumidityJSON.totalPerCycle[lenghtOfArray-1].value}</div>
+                        <div>{airHumidity.totalPerCycle[lenghtOfArray-1].value}</div>
                     </div>
                 </div>
             </div>

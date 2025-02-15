@@ -12,10 +12,10 @@ function MainComponent() {
   return (
 
     <InitData.Provider value={{
-      noteJSON: {},
-      runTimeJSON: { day: "01", month: "01", year: "2025", hh: "00", mm: "00", ss: "00" },
+      note: {},
+      runTime: { day: "01", month: "01", year: "2025", hh: "00", mm: "00", ss: "00" },
 
-      labelPerProbeJSON: [
+      labelPerProbe: [
         "01.01.2025", "02.01.2025", "03.01.2025", "04.01.2025", "05.01.2025",
         "06.01.2025", "07.01.2025", "08.01.2025", "09.01.2025", "10.01.2025",
         "11.01.2025", "12.01.2025", "13.01.2025", "14.01.2025", "15.01.2025",
@@ -24,8 +24,7 @@ function MainComponent() {
         "26.01.2025", "27.01.2025", "28.01.2025", "29.01.2025", "30.01.2025"
       ],
 
-      powerConsumptionJSON: {
-
+      powerConsumption: {
         labelPerProbe: [
           "01.01.2025", "02.01.2025", "03.01.2025", "04.01.2025", "05.01.2025",
           "06.01.2025", "07.01.2025", "08.01.2025", "09.01.2025", "10.01.2025",
@@ -57,7 +56,7 @@ function MainComponent() {
       
       },
 
-      ThermometerJSON: 
+      Thermometer: 
       {
         last30TempProbe: [
           28.82, 18.98, 34.49, 20.75, 34.1, 19.4, 29.31, 24.33, 27.99, 31.43,
@@ -67,7 +66,7 @@ function MainComponent() {
         ],
       },
 
-      "groundHumidityJSON":
+      "groundHumidity":
       {
         "totalPerCycle": [
           {"timeLabel": "2025-01-01T12:45:23",
@@ -94,7 +93,7 @@ function MainComponent() {
         ]
       },
 
-      "airHumidityJSON":
+      "airHumidity":
       {
         "totalPerCycle": [
           {"timeLabel": "2025-01-01T12:45:23",
@@ -121,7 +120,7 @@ function MainComponent() {
         ]
       },
 
-      "NPKJSON":
+      "NPK":
       {
         "totalPerCycle": [
           {"timeLabel": "2025-01-01T12:45:23",
