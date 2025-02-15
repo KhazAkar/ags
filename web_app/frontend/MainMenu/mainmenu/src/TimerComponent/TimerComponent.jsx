@@ -6,7 +6,7 @@ import './TimerComponentStyle.css';
 export default function TimerComponent({children})
 {
     let initContextData = useContext(InitData);
-    let initDate = {...initContextData.runTimeJSON}
+    let initDate = {...initContextData.runTime}
     let timeout = useRef(null);
 
     let currentDateOBJ = useRef(new Date());
