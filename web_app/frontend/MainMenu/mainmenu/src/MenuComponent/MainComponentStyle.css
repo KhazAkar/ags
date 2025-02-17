@@ -92,13 +92,9 @@ textarea:not([rows]) {
 
   .MainComponent
   {
-    min-width: 1920px;
-    min-height: 900px;
-
-    width: 100vw; 
-    height: 49.5vw; /* height:width ratio = 9/16 = .5625  */
-    
-   }
+    width: 100%;
+    min-height: 100%;
+  }
 
   .outerGrid
   {
@@ -107,29 +103,12 @@ textarea:not([rows]) {
     padding: 10px;
     display: grid;
     height: 100%;
-    grid-template-columns: 1fr 25fr 5fr;
+    grid-template-columns: 25fr 5fr;
     grid-template-rows: 100%;
     column-gap: var(--gapVal );
   }
 
-  .menuGrid
-  {
-    height: 100%;
-    width: 100%;
-    
-    background-color: rgba(0, 0, 0,0);
-    display: grid;
-    grid-template-rows: 2fr 2fr 2fr 2fr 38.5fr 2fr;
-    grid-template-columns: 1fr;
-    row-gap: var(--gapVal );
-    padding: var(--gapVal );
-
-    border-color: #32323F;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 10px;
-
-  }
+  
 
   .centerGrid
   {
@@ -155,7 +134,7 @@ textarea:not([rows]) {
     row-gap: var(--gapVal );
   }
 
-  .content1
+.content1
 {
   width: 100%;
   height: 100%;

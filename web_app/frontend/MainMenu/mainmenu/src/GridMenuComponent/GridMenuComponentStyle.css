@@ -1,0 +1,64 @@
+:root {
+  --gapVal:10px;
+
+  --var-border-color: #32323F;
+  --var-border-width: 1px;
+  --var-border-style: solid;
+  --var-border-radius: 5px;
+}
+
+
+@media screen and (min-width: 1281px) 
+{
+
+.menuGridY
+  {
+    min-height: 100%;
+    width: 100%;
+    
+    background-color: rgba(0, 0, 0,0);
+    display: grid;
+    grid-template-rows: 2fr 2fr 2fr 2fr 38.5fr 2fr;
+    grid-template-columns: 1fr;
+    row-gap: var(--gapVal );
+    padding: var(--gapVal );
+
+    border-color: #32323F;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+
+  }
+
+  
+  .activeButton
+  {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #85817f;
+  }
+
+  .normalButton
+  {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #DDD5D0;
+  }
+
+  .svg {
+    display: flex;  /* Change from block to flex */
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+.svgInner {
+    width: 100%;  /* Ensure it takes full space */
+    height: 100%;
+}
+
+
+}

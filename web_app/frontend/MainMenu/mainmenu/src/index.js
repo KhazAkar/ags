@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import MainComponent from './MainComponent';
 import reportWebVitals from './reportWebVitals';
+import ReactRouterComponent from './ReactRouterComponent/ReactRouterComponent.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainComponent />
+    <ReactRouterComponent />
   </React.StrictMode>
 );
 

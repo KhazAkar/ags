@@ -1,14 +1,15 @@
 import './MainComponentStyle.css';
-import NoteComponent from './NoteComponent/NoteComponent.jsx';
-import {InitData} from './Context/InitContextData.jsx';
-import TimerComponent from './TimerComponent/TimerComponent.jsx';
-import PowerConsumptionComponent from './PowerConsumptionComponent/PowerConsumptionComponent.jsx';
-import ThermometerComponent from './ThermometerComponent/ThermometerComponent.jsx';
-import NPKComponent from './NPKComponent/NPKComponent.jsx';
-import HumidityComponent from './HumidityComponent/HumidityComponent.jsx';
-import AirHumidityComponent from './AirHumidityComponent/AirHumidityComponent.jsx';
+import NoteComponent from '../NoteComponent/NoteComponent.jsx';
+import {InitData} from '../Context/InitContextData.jsx';
+import TimerComponent from '../TimerComponent/TimerComponent.jsx';
+import PowerConsumptionComponent from '../PowerConsumptionComponent/PowerConsumptionComponent.jsx';
+import ThermometerComponent from '../ThermometerComponent/ThermometerComponent.jsx';
+import NPKComponent from '../NPKComponent/NPKComponent.jsx';
+import HumidityComponent from '../HumidityComponent/HumidityComponent.jsx';
+import AirHumidityComponent from '../AirHumidityComponent/AirHumidityComponent.jsx';
+import GridMenuComponent from '../GridMenuComponent/GridMenuComponent.jsx';
 
-function MainComponent() {
+export default function MainComponent() {
   return (
 
     <InitData.Provider value={{
@@ -182,30 +183,6 @@ function MainComponent() {
       {/* 3 columns one row */}
       <div className="outerGrid"> 
 
-        {/* 1column x 1row */}
-        <div className="menuGrid"> 
-          <div className="tempButton">
-
-          </div>
-          <div className="tempButton">
-              
-          </div>
-          <div className="tempButton">
-
-          </div>
-          <div className="tempButton">
-
-          </div>
-
-          <div>
-
-          </div>
-
-          <div className="tempButton">
-
-          </div>
-        </div>
-
         {/* 3columns x 4rows */}
         <div className="centerGrid"> 
 
@@ -254,5 +231,3 @@ function MainComponent() {
     </InitData.Provider>
   );
 }
-
-export default MainComponent;
