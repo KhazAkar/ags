@@ -48,17 +48,23 @@
   }
 
   .svg {
-    display: flex;  /* Change from block to flex */
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 80%;
-}
-
-.svgInner {
-    width: 100%;  /* Ensure it takes full space */
     height: 100%;
-}
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
+  .svgInner {
+      width: 70%;  /* Ensure it takes full space */
+      height: 70%;
+      margin-left: auto;
+      margin-right: auto; 
+  }
+
+  .normalButton.blank
+  {
+    background-color: black;
+  }
 
 }
