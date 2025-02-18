@@ -108,6 +108,7 @@ textarea:not([rows]) {
     height: 100%;
     grid-template-columns: 1fr 30fr;
     grid-template-rows: 100%;
+    column-gap: var(--gapVal);
   }
 
   .leftGridX
