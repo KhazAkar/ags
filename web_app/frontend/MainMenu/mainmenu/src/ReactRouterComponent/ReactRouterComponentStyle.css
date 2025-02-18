@@ -119,7 +119,7 @@ textarea:not([rows]) {
     display: grid;
     grid-template-rows: 48.5fr;
     grid-template-columns: 1fr;
-    padding: var(--gapVal ) 0 0 var(--gapVal );
+    padding: var(--gapVal ) 0 var(--gapVal ) var(--gapVal );
 
   }
   .centerGridX
@@ -129,9 +129,10 @@ textarea:not([rows]) {
     background-color: rgba(0, 0, 0,0);
     display: grid;
     grid-template-columns: 3fr;
-    grid-template-rows: 6fr;
+    grid-template-rows: 48.5fr;
     column-gap: var(--gapVal );
     row-gap: var(--gapVal );
+    
   }
 }
 

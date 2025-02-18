@@ -103,137 +103,23 @@ textarea:not([rows]) {
     padding: 10px;
     display: grid;
     height: 100%;
-    grid-template-columns: 25fr 5fr;
+    width: 100%;
+    grid-template-columns: 100%;
     grid-template-rows: 100%;
     column-gap: var(--gapVal );
   }
 
-  
-
-  .centerGridC
+  .content1c
   {
-    height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0,0);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 3fr 1fr 1fr 1fr;
-    column-gap: var(--gapVal );
-    row-gap: var(--gapVal );
-  }
-
-  .rightGridC
-  {
     height: 100%;
-    width: 100%;
     background-color: rgba(0, 0, 0,0);
-    grid-template-columns: 1fr;
-    grid-template-rows: 10% calc(90% - var(--gapVal ));
-    display: grid;
-    column-gap: var(--gapVal );
-    row-gap: var(--gapVal );
+
+    border-radius: var(--var-border-radius);
+    border-width: var(--var-border-width);
+    border-style: var(--var-border-style);
+    border-color: var(--var-border-color);
   }
-
-.content1
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0,0);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
-.content2a
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0,0);
-  grid-column: 1 / 2;
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
- 
-}
-
-.content2b
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  grid-column: 1 / 2;
-  gap: var(--gapVal);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
-.content2c
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  grid-column: 1 / 2;
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
-.contentCam
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  grid-column: 2 / 4;
-  grid-row: 2 / 5;
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
-.tempButton
-{
-  width: 40px;
-  height: 40px;
-  border-radius: 10px 10px 10px 10px;
-  background-color: #DDD5D0;
-}
-
-.content4
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
-
-.content5
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
 }
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {

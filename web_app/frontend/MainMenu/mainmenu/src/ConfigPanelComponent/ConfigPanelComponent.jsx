@@ -1,5 +1,6 @@
 import React from "react";
 import './ConfigPanelComponentStyle.css';
+import SliderComponent from "../ConfigChartComponent/SliderComponent.jsx";
 
 export default function ConfigPanelComponent()
 {
@@ -7,50 +8,7 @@ export default function ConfigPanelComponent()
         <div className="ConfigPanelComponent">
               {/* 3 columns one row */}
               <div className="outerGridC"> 
-        
-                {/* 3columns x 4rows */}
-                <div className="centerGridC"> 
-        
-                  <div className="content1">
-                  
-                  </div>
-                  <div className="content1">
-                  
-                  </div>
-                  <div className="content1">
-                  
-                  </div>
-        
-                  <div className="content2a">
-                    
-                  </div>
-        
-                  <div className="content2b">
-                  
-                  </div>
-        
-                  <div className="content2c">
-                    
-                  </div>
-        
-                  <div className="contentCam">
-                    
-                  </div>
-        
-                </div>
-        
-                {/* 1column x 2rows */}
-                <div className="rightGridC"> 
-        
-                    <div className="content4">
-                     
-                    </div>
-          
-                    <div className="content5">
-                     
-                    </div>
-        
-                </div>
+                <SliderComponent minY={0} maxY={100} startTime={0} endTime={60*60*24-1} chartLabel={'temperature'}/>
               </div>
             </div>
     )

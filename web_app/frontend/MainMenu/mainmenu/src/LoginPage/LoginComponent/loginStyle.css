@@ -1,0 +1,62 @@
+.Page {
+    text-align: center;
+    background-color: #282c34;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-image: url('../photos/palm.jpg');
+    background-size: cover;
+    min-width: 500px;
+    min-height: 400px;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+.LoginWindow
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+
+    min-width: 400px;
+    width: 400px;
+
+    min-height: 500px;
+    height: 500px;
+
+    border-radius: 5px;
+    background-color: rgba(39, 39, 39,0.9); /*#4C4E5D*/
+    align-items: center;
+    justify-items: center;
+}
+
+.LoginGrid
+{
+    display: grid;
+    height: 80%;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 30% 40%;
+    padding: 15px;
+}
+
+.buttonGrid
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

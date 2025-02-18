@@ -1,0 +1,32 @@
+.RegisterWindow
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+
+    min-width: 400px;
+    width: 400px;
+
+    min-height: 500px;
+    height: 500px;
+
+    border-radius: 5px;
+    background-color: rgba(39, 39, 39,0.9); /*#4C4E5D*/
+    align-items: center;
+    justify-items: center;
+}
+
+.RegisterGrid
+{
+    display: grid;
+    height: 90%;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 20% 20% 30%;
+    padding: 15px;
+}
+
+.buttonGrid
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

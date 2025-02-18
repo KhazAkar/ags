@@ -1,0 +1,37 @@
+.customStyle
+{
+    padding: 6px;
+    margin: 0px;
+    border: 0px;
+}
+
+.rc-tooltip-content
+{
+
+}
+
+.rc-tooltip-inner 
+{
+    padding: 10px 6px;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    background-color: #535353;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+    min-height: 0;
+}
+
+.rc-tooltip
+{
+    visibility: visible;
+    font-size: 13px;
+    line-height: 1;
+}
+
+element 
+{
+  --arrow-x: 15px;
+  --arrow-y: 15px;
+  background-color: bisque;
+}
