@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
   <diagram name="Page-1" id="IBadu4LZ08qrW4AhB5S2">
-    <mxGraphModel dx="1818" dy="1628" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2068" dy="1774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -202,25 +202,25 @@
           <mxGeometry x="10" y="2060" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-76" value="Control Panel to mana&lt;span style=&quot;background-color: initial;&quot;&gt;g&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;e light lvl&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006666;strokeColor=#6c8ebf;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="70" y="1480" width="970" height="360" as="geometry" />
+          <mxGeometry x="70" y="1540" width="970" height="360" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="wwbBHk68ZUi85Zo3GLRl-97" target="wwbBHk68ZUi85Zo3GLRl-105" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-97" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1050" y="1480" width="30" height="630" as="geometry" />
+          <mxGeometry x="1050" y="1540" width="30" height="570" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="wwbBHk68ZUi85Zo3GLRl-76" target="wwbBHk68ZUi85Zo3GLRl-76" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-100" value="Control Panel to mange a air flow" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006666;strokeColor=#6c8ebf;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="70" y="1850" width="970" height="360" as="geometry" />
+          <mxGeometry x="70" y="1910" width="970" height="360" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-101" value="Control Panel to manage watering" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006666;strokeColor=#6c8ebf;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="70" y="2220" width="970" height="360" as="geometry" />
+          <mxGeometry x="70" y="2280" width="970" height="360" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-102" value="Control Panel to manage humidity in the air" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006666;strokeColor=#6c8ebf;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="70" y="2590" width="970" height="360" as="geometry" />
+          <mxGeometry x="70" y="2650" width="970" height="360" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-105" value="Scroll&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=bottom;whiteSpace=wrap;rounded=0;fillColor=#663300;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="1150" y="1700" width="100" height="40" as="geometry" />
@@ -267,7 +267,7 @@
           <mxGeometry x="-240" y="640" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-123" value="&lt;span style=&quot;background-color: rgb(218, 232, 252);&quot;&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Control Panel to manage temperature&lt;/span&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006666;strokeColor=#6C8EBF;fontSize=20;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="70" y="2960" width="970" height="360" as="geometry" />
+          <mxGeometry x="70" y="3020" width="970" height="360" as="geometry" />
         </mxCell>
         <mxCell id="wwbBHk68ZUi85Zo3GLRl-126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wwbBHk68ZUi85Zo3GLRl-124" target="wwbBHk68ZUi85Zo3GLRl-125" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -403,6 +403,9 @@
         </mxCell>
         <mxCell id="ApLrVtrNpmdINIdCq9hR-50" value="Live camera feed back" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00331A;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="2370" y="1670" width="590" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="pXQfM3BDwPjr853Dvg8A-1" value="Bar with dropdown menu and data managment buttons like download config from server, upload data to server etc" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#663300;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="70" y="1480" width="1010" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

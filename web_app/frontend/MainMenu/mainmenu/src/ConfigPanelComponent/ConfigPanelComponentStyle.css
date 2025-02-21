@@ -93,10 +93,13 @@ textarea:not([rows]) {
   .ConfigPanelComponentCCC {
     width: 100%;
     min-height: 100%;
-    display: flex;
+    display: grid;
+    grid-template-rows: repeat(2, auto); 
+    grid-template-columns: repeat(1, 100%); 
     justify-content: center;  /* Horizontally center */
     align-items: center;      /* Vertically center */
     overflow: hidden;
+    padding: 10px 10px 0px 0px;
   }
   
   .outerGridCCC {
@@ -118,6 +121,26 @@ textarea:not([rows]) {
     border-color: var(--var-border-color);
   }
   
+
+  .gridBarplusPanels
+  {
+    color: #DDD5D0;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    display: grid;
+    width: 100%;  /* Fixed width or adjust as needed */
+    height: 97%;
+    justify-items: center; /* Centers the grid items */
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(2, auto); 
+    row-gap: var(--gapVal);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: var(--var-border-radius);
+    border-width: var(--var-border-width);
+    border-style: var(--var-border-style);
+    border-color: var(--var-border-color);
+  }
 
 .sliderCenter
 {

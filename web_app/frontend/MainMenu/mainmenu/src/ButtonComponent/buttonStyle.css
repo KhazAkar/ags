@@ -55,3 +55,14 @@
 {
     font-size: 10px;
 }
+
+.imgSvg {
+    width: 100%;  /* Limit the size of the SVG */
+    height: 100%; /* Limit the height of the SVG */
+    padding: 2px;
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}

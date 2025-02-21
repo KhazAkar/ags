@@ -1,14 +1,13 @@
 import React from 'react';
 import './buttonStyle.css';
 
-export default function Button({children, text, onClickFun, style=undefined, upperCol = undefined, underCol = undefined})
+export default function Button({children, text, onClickFun, style=undefined, svgPath = undefined, upperCol = undefined, underCol = undefined})
 {
-
     // Conditional styling for UnderButtonStyle
-    const underStyle = underCol === undefined ? {backgroundColor: "#00db80", ...style} : {backgroundColor: underCol, ...style};
+    const underStyle = underCol === undefined ? {backgroundColor: "#00b167", ...style} : {backgroundColor: underCol, ...style};
 
     // Conditional styling for UpperButtonStyle
-    const upperStyle = upperCol === undefined ? {backgroundColor: "#00b167", ...style} : {backgroundColor: upperCol,  ...style};
+    const upperStyle = upperCol === undefined ? {backgroundColor: "#00db80", ...style} : {backgroundColor: upperCol,  ...style};
 
         
     return(
@@ -17,7 +16,7 @@ export default function Button({children, text, onClickFun, style=undefined, upp
             </div>
 
             <div className={'UpperButtonStyle'} onClick={onClickFun} style={upperStyle}>
-                {text}
+                { svgPath !== undefined ? <img className={"imgSvg"} src={svgPath} alt="icon" /> : text }
             </div>
         </div>
     )
