@@ -264,7 +264,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   }
 
   return (
-    <div className='ChartJS'>
+    <div key={sliderArray.current.length} style={{height: sliderArray.current.length*72 + 505}}className='ChartJS'>
       <div className='importExportButtons'>
 
         <div className='buttonClassKurwa'>

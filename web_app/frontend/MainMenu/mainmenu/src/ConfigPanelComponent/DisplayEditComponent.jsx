@@ -24,13 +24,13 @@ export default function DisplayEditComponent() {
                     
                     <Button onClickFun={
                         ()=>{
-                            toggleState(false)
+
+                            setinnerReload(sliderData.controlPanelData[sliderData.currentIndex].profileName)
                             dispatchChart(
                                 {
                                 type: "CHANGE_ACTIVE_PROGRAM",
                                 load: {}
                             })
-                            setinnerReload(newName + "holder")
                         } }
                         text={ sliderData.currentIndex == sliderData.activeProfile ? "Current SetUp" : "Activate"}
                         upperCol = { sliderData.currentIndex == sliderData.activeProfile ? "rgb(100, 100, 100)" : "#00db80" }

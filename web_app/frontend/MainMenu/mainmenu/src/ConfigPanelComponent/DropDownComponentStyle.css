@@ -44,6 +44,31 @@
     background-color: rgb(73, 73, 73);
 }
 
+.dropDownTopic
+{
+    overflow: hidden;
+}
+.DropDownElementActive
+{
+    display: flex;
+    position: relative;
+    padding: 2px 5px 2px 5px;
+    height: 40px;
+    width: inherit;
+    cursor: pointer;
+    z-index: 11;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    background-color: rgb(65, 133, 20);
+}
+
+.DropDownElementActive:hover
+{
+    background-color: rgb(121, 228, 33);
+    color: rgb(59, 59, 59);
+}
+
 .DropDownMenuList
 {
     position: absolute;

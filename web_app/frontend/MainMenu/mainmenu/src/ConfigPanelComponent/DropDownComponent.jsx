@@ -16,7 +16,7 @@ export default function DropDownComponent( {reloader} )
     return (
         <div className="DropDownContainer">
             <div className={"DropDownButton"} onClick={toggleDropdown}>
-                <div>
+                <div className='dropDownTopic'>
                     {sliderData.controlPanelData[sliderData.currentIndex].profileName}
                 </div>
                 <div>
@@ -31,7 +31,7 @@ export default function DropDownComponent( {reloader} )
                         sliderData.controlPanelData.map( (obj,index) => 
                             {
                                 return(
-                                    <div key={index} className='DropDownElement' onClick={ ( ) => {
+                                    <div key={index} className={ sliderData.activeProfile != index? 'DropDownElement' : 'DropDownElementActive'} onClick={ ( ) => {
                                         dispatchChart({type: "CHOOSEN_INDEX",
                                                         newIndex: index
                                         });
