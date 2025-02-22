@@ -36,16 +36,15 @@ ChartJS.register(
 
 export default function SliderComponent({ children, minY, maxY, startTime, endTime, chartLabel, entryAddress, contextProfileIndex = undefined }) {
 
-  let { sliderData, dispatchChart }= useContext(ProfileContext);
+  let { sliderData, dispatchChart } = useContext(ProfileContext);
   let [update, setUpdate] = useState(0);
   let [editIndex, setEditIndex] = useState(null);
 
   // 
-  let iii = useRef(0) //it find the panel
+  let iii = useRef(0) //it find out the name of the panel for example TEMETARUTE etc
   while(chartLabel != sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].sliderNames )
   {
     iii.current++;
-
   }
   
   let minYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].minY
@@ -53,7 +52,6 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
 
   function getFromContext() {
     let newOne = [];
-    console.log( "sex" + sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].val.length)
 
     for (let i = 0; i < sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].val.length; i++) {
       newOne.push({
@@ -63,18 +61,15 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
 
       });
     }
-    console.log(newOne[0].time, " - ", newOne[0].val, " - ", newOne[0].label, " - ")
-  
+
     return newOne;
   }
 
   let xArray = getFromContext();
-
   let sliderArray = useRef( [...xArray] );
-
   let isCreatingNewSlider = useRef(false);
   let [hoveredIndex, setHoveredIndex] = useState(null); // New state for hovered index
-  let mathFunArray = useRef([]); //{startT:0, endT:0, formula:""}
+  //let mathFunArray = useRef([]); //{startT:0, endT:0, formula:""}
   let downloadRef = useRef(0);
 
 
@@ -87,12 +82,12 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   function generateLinearFunctionArray() {
     let coeficient = 0;
     let interceptsOfLine = 0;
-    mathFunArray.current = [];
+    //mathFunArray.current = [];
 
     for (let i = 1; i < sliderArray.current.length; i++) {
       coeficient = ((sliderArray.current[i].val - sliderArray.current[i - 1].val) / (sliderArray.current[i].time - sliderArray.current[i - 1].time));
       interceptsOfLine = sliderArray.current[i - 1].val - (coeficient * sliderArray.current[i - 1].time);
-      mathFunArray.current.push({ coeficient: coeficient, interceptsOfLine: interceptsOfLine, formula: `${coeficient}x + ${interceptsOfLine}` })
+      //mathFunArray.current.push({ coeficient: coeficient, interceptsOfLine: interceptsOfLine, formula: `${coeficient}x + ${interceptsOfLine}` })
     }
   }
 
@@ -143,7 +138,6 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   }
 
   function addNewSlider(changeStatus) {
-    console.log("1");
     return <ManageSliderComponents role='add' roleFunction={addSlider} objArray={[...sliderArray.current]} closeCreatorFun={closeCreatorFun} />;
   }
 
@@ -220,18 +214,34 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     ));
   }
 
-  function exportJSON() {
+  /*
+    function exportJSON() {
     generateLinearFunctionArray();
-    let jsonContext = JSON.stringify({ sliders: [...sliderArray.current], linearFunctions: [...mathFunArray.current] });
-    let jsonBlob = new Blob([jsonContext], { type: 'application/json' });
+    let jsonContext = JSON.stringify({ sliders: [...sliderArray.current], }); // linearFunctions: [...mathFunArray.current] 
+    let jsonBlob = new Blob([jsonContext], { type: 'application/json' }); 
     let urlData = URL.createObjectURL(jsonBlob);
     let fileName = chartLabel + "-Chart.json";
 
     downloadRef.current.href = urlData;
     downloadRef.current.download = fileName;
     downloadRef.current.click();
-
     URL.revokeObjectURL(urlData);
+  }
+  */
+
+  function saveConfig()
+  {
+    dispatchChart({
+      type:"SAVE_CONFIG",
+      load: {
+        label : sliderArray.current.map( obj => obj.label),
+        val : sliderArray.current.map( obj => obj.val),
+        time : sliderArray.current.map( obj => obj.time)
+      }
+      ,
+      panelIndex:  iii.current
+    })
+
   }
 
   function importJSON(event) {
@@ -258,11 +268,12 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
       <div className='importExportButtons'>
 
         <div className='buttonClassKurwa'>
-          <a href={'dummyPlug.json'} ref={downloadRef}>
-            <button className='exportFile' onClick={() => { exportJSON() }}>
+          {/*<a href={'dummyPlug.json'} ref={downloadRef}>*/}
+            <button className='exportFile' onClick={() => { saveConfig() }}>
+            {/*<button className='exportFile' onClick={() => { exportJSON() }}> */}
               Save Config
             </button>
-          </a>
+          {/*</a>*/}
         </div>
 
 

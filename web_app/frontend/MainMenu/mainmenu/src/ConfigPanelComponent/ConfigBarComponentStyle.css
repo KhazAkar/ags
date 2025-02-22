@@ -7,22 +7,17 @@
     width: 100%;  /* Fixed width or adjust as needed */
     height: fit-content; 
     justify-items: center; /* Centers the grid items */
-    grid-template-columns: 10fr 45fr 10fr 2fr 2fr 2fr 2fr 2fr ;
+    grid-template-columns: 8fr 55fr 8fr 2.5fr 2.5fr 2.5fr 2.5fr 2.5fr ;
     grid-template-rows: 1fr; 
     row-gap: var(--gapVal);
-    overflow-y: hidden;
-    overflow-x: hidden;
+    padding: 0px 10px 0px 10px;
     border-radius: var(--var-border-radius);
     border-width: var(--var-border-width);
     border-style: var(--var-border-style);
     border-color: var(--var-border-color);
-}
+    z-index: 8;
+    position: relative;
 
-.nameHolder
-{
-    display: grid;
-    width: 100%;  /* Fixed width or adjust as needed */
-    height: fit-content;
-    grid-template-columns: 90fr 10fr ;
-    column-gap: 10px;
+    align-items: center;
+    align-content: center;
 }

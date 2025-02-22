@@ -1,0 +1,47 @@
+.nameHolder
+{
+    align-items: center;
+    align-content: center;
+    position: relative;
+
+    max-width: 400px;
+    height: fit-content;
+    z-index: 9;
+}
+
+.namePlaceHolder
+{
+    min-width: 200px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.nameHolderForActivate
+{
+    align-items: center;
+    align-content: center;
+    display: grid;
+    position: relative;
+    width: 400px;
+    max-width: 400px;
+    height: fit-content;
+    grid-template-columns: 70fr 10fr 30fr;
+    column-gap: 10px;
+    z-index: 9;
+}
+
+.nameHolderFor3
+{
+    align-items: center;
+    align-content: center;
+    display: grid;
+    position: relative;
+    width: 400px;
+    max-width: 400px;
+    
+    height: fit-content;
+    grid-template-columns: 80fr 10fr 10fr;
+    column-gap: 10px;
+    overflow: visible;
+    z-index: 9;
+    color: (3,3,3);
+}
