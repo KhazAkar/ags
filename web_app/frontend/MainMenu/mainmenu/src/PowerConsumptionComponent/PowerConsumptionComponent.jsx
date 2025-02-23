@@ -10,8 +10,8 @@ ChartJS.register(BarController, CategoryScale, LinearScale, BarElement, Title, T
 
 export default function PowerConsumptionComponent({ children }){
 
-    const {powerConsumptionJSON} = useContext(InitData);
-    const {labelPerProbe, totalPerProbe,maxPerProbe,minPerProbe, pricePerkWh} = powerConsumptionJSON;
+    const {powerConsumption} = useContext(InitData);
+    const {labelPerProbe, totalPerProbe, maxPerProbe, minPerProbe, pricePerkWh} = powerConsumption;
 
     const configRef = useRef({
         data: {
