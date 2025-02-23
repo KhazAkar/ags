@@ -2,8 +2,9 @@ import React from 'react';
 import {useState, useRef} from 'react';
 import './ManageSliderComponents.css';
 import './inputStye.css';
-import {ReactComponent as Cancel} from './cancel.svg';
-import {ReactComponent as Done} from './yes.svg';
+import Cancel from '../../resources/cancel.svg';
+import Done from '../../resources/yes.svg';
+import Button from '../../ButtonComponent/Button.jsx'
 
 //it is in 95% AddNewSliderComponent with small differences
 export default function ManageSliderComponents({children, roleFunction=undefined, objArray=undefined, closeCreatorFun=undefined, closeEditFun=undefined, index=undefined, role=undefined}) //role can be 'edit' 'add'
@@ -184,13 +185,8 @@ export default function ManageSliderComponents({children, roleFunction=undefined
                 }
                 </div>
                 
-                <div className='containerSVGAdd' onClick={() => invokeFun() }>
-                    <Done className='sizeSVG' />
-                </div>
-
-                <div className='containerSVGCancel' onClick={ role === 'add' ? () => closeCreatorFun() : () => closeEditFun()}>
-                    <Cancel className='sizeSVG' />
-                </div>
+                <Button style={{"max-width": "45px", "max-height": "40px", "padding":"3px"}} svgPath={Done} onClickFun={() => invokeFun() }/>
+                <Button style={{"max-width": "45px", "max-height": "40px", "padding":"3px"}} upperCol={"rgb(241, 25, 61)"} underCol={"rgb(177, 23, 48)"} svgPath={Cancel} onClickFun={ role === 'add' ? () => closeCreatorFun() : () => closeEditFun()}/>
             </div>
 
             <div className='ErrorWindow'>

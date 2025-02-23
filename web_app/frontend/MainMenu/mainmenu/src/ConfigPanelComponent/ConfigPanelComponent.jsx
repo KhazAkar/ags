@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './ConfigPanelComponentStyle.css';
-import SliderComponent from "../ConfigChartComponent/SliderComponent.jsx";
+import SliderComponent from "./ConfigChartComponent/SliderComponent.jsx";
 import ConfigBarComponent from "./ConfigBarComponent.jsx";
 import ConfigContextComponent from './ConfigContextComponent.jsx'
 

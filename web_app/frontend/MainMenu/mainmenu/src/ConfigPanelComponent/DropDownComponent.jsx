@@ -13,6 +13,13 @@ export default function DropDownComponent( {reloader} )
         setIsOpen(!isOpen);  // Zmieniamy stan, otwierając/zamykając listę
     };
 
+    function chooseIndex(index)
+    {
+        dispatchChart({type: "CHOOSEN_INDEX",
+            newIndex: index
+        });
+    }
+
     return (
         <div className="DropDownContainer">
             <div className={"DropDownButton"} onClick={toggleDropdown}>
@@ -32,10 +39,8 @@ export default function DropDownComponent( {reloader} )
                             {
                                 return(
                                     <div key={index} className={ sliderData.activeProfile != index? 'DropDownElement' : 'DropDownElementActive'} onClick={ ( ) => {
-                                        dispatchChart({type: "CHOOSEN_INDEX",
-                                                        newIndex: index
-                                        });
                                         
+                                        chooseIndex(index);
                                         reloader(index);
                                         toggleDropdown();
                                      }

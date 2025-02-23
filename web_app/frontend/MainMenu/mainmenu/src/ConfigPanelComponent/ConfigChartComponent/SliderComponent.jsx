@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useRef, useContext } from 'react';
-import {ProfileContext} from '../ConfigPanelComponent/ConfigContextComponent.jsx'
+import { ProfileContext } from '../ConfigContextComponent.jsx'
+import Button from '../../ButtonComponent/Button.jsx'
 
 import {
   Chart as ChartJS,
@@ -19,9 +20,9 @@ import TooltipSlider from './TooltipSlider.tsx';
 import 'rc-slider/assets/index.css';
 import './SliderComponent.css';
 
-import { ReactComponent as Trash } from './trash-red.svg'
-import { ReactComponent as Pencil } from './pencil-white.svg'
-import { ReactComponent as Add } from './add-white.svg'
+import { ReactComponent as Trash } from '../../resources/trash-red.svg'
+import { ReactComponent as Pencil } from '../../resources/pencil-white.svg'
+import Add from '../../resources/add-white.svg'
 
 // Register the required components
 ChartJS.register(
@@ -42,11 +43,10 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
 
   // 
   let iii = useRef(0) //it find out the name of the panel for example TEMETARUTE etc
-  while(chartLabel != sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].sliderNames )
-  {
+  while (chartLabel != sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].sliderNames) {
     iii.current++;
   }
-  
+
   let minYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].minY
   let maxYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].maxY
 
@@ -66,7 +66,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   }
 
   let xArray = getFromContext();
-  let sliderArray = useRef( [...xArray] );
+  let sliderArray = useRef([...xArray]);
   let isCreatingNewSlider = useRef(false);
   let [hoveredIndex, setHoveredIndex] = useState(null); // New state for hovered index
   //let mathFunArray = useRef([]); //{startT:0, endT:0, formula:""}
@@ -191,7 +191,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
           />
           {hoveredIndex === index && ( // Check if current index is hovered
             <div className='optionPresentation'>
-
+              
               <div className='clicableDiv' onClick={() => setEditIndex(() => index)}>
                 <Pencil className='sizeSVG' />
               </div>
@@ -229,17 +229,16 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   }
   */
 
-  function saveConfig()
-  {
+  function saveConfig() {
     dispatchChart({
-      type:"SAVE_CONFIG",
+      type: "SAVE_CONFIG",
       load: {
-        label : sliderArray.current.map( obj => obj.label),
-        val : sliderArray.current.map( obj => obj.val),
-        time : sliderArray.current.map( obj => obj.time)
+        label: sliderArray.current.map(obj => obj.label),
+        val: sliderArray.current.map(obj => obj.val),
+        time: sliderArray.current.map(obj => obj.time)
       }
       ,
-      panelIndex:  iii.current
+      panelIndex: iii.current
     })
 
   }
@@ -263,30 +262,18 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     reader.readAsText(file);
   }
 
+
+  function addFun()
+  { 
+    isCreatingNewSlider.current = true; setUpdate(() => 'yes'); 
+    return 0;
+  }
+
   return (
-    <div key={sliderArray.current.length} style={{height: sliderArray.current.length*72 + 505}}className='ChartJS'>
+    <div key={sliderArray.current.length} style={{ height: sliderArray.current.length * 80 + 505 }} className='ChartJS'>
       <div className='importExportButtons'>
-
-        <div className='buttonClassKurwa'>
-          {/*<a href={'dummyPlug.json'} ref={downloadRef}>*/}
-            <button className='exportFile' onClick={() => { saveConfig() }}>
-            {/*<button className='exportFile' onClick={() => { exportJSON() }}> */}
-              Save Config
-            </button>
-          {/*</a>*/}
-        </div>
-
-
-        <div className='buttonClassKurwa'>
-          <label className="importlabel">
-            Get Config
-            <input
-              className="importFile"
-              type="file"
-              onChange={(event) => importJSON(event)}
-            />
-          </label>
-        </div>
+        <Button style={{"width": "100px", "margin": "0px 10px 0px 10px"}} onClickFun={() => { saveConfig() }} text={"Save Config"}/>
+        <Button style={{"width": "100px", "text-decoration": "line-through"}}  /*upperCol={"rgb(15, 207, 255)"} underCol={"rgb(46, 110, 247)"}*/ upperCol={"rgb(119, 119, 119)"} underCol={"rgb(75, 75, 75)"} onClickFun={(event) => importJSON(event)} text={"Import Config"}/>
       </div>
 
       <Line data={data} options={options} />
@@ -299,9 +286,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
         {isCreatingNewSlider.current
           ? addNewSlider(isCreatingNewSlider)
           :
-          <div className='addButtonDiv' onClick={() => { isCreatingNewSlider.current = true; setUpdate(() => 'yes'); return 0; }}>
-            <Add className='sizeSVG addButtonSVG' />
-          </div>
+          <Button svgPath={Add} style={{"max-width": "40px", "max-height": "40px","margin": "0px 10px 0px 10px", "padding":"5px"}} onClickFun={() => addFun() } text={"Save Config"}/>
         }
       </div>
     </div>

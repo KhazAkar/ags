@@ -12,6 +12,28 @@ export default function DisplayEditComponent() {
     let [isEdit, toggleState] = useState(false);
     let [newName, setNewName] = useState("");
     let [innerReload, setinnerReload] = useState("");
+
+
+    function changeActiveProfile()
+    {
+        dispatchChart(
+            {
+            type: "CHANGE_ACTIVE_PROGRAM",
+            load: {}
+        })
+    }
+
+    function saveNewName()
+    {
+        dispatchChart({
+            type: "SET_NEW_NAME",
+            load: {
+                newProfileName: newName
+            }
+            
+        });
+    }
+
     return (
         <div className={"nameHolder"}>
             {
@@ -26,11 +48,7 @@ export default function DisplayEditComponent() {
                         ()=>{
 
                             setinnerReload(sliderData.controlPanelData[sliderData.currentIndex].profileName)
-                            dispatchChart(
-                                {
-                                type: "CHANGE_ACTIVE_PROGRAM",
-                                load: {}
-                            })
+                            changeActiveProfile()
                         } }
                         text={ sliderData.currentIndex == sliderData.activeProfile ? "Current SetUp" : "Activate"}
                         upperCol = { sliderData.currentIndex == sliderData.activeProfile ? "rgb(100, 100, 100)" : "#00db80" }
@@ -48,13 +66,8 @@ export default function DisplayEditComponent() {
                         setNewName(event.target.value)
                     }} 
                     />
-                    <Button text={"save name"} onClickFun={()=>{dispatchChart({
-                            type: "SET_NEW_NAME",
-                            load: {
-                                newProfileName: newName
-                            }
-                            
-                        });
+                    <Button text={"save name"} onClickFun={()=>{
+                        saveNewName();
                         toggleState(false);
                         reloader(newName);
                     }} 
