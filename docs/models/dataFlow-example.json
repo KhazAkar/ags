@@ -1,5 +1,5 @@
 {
-    "noteJSON": { 
+    "note": { 
         "notes": ["Plant growth depends on the availability of water and light.","Most of plants are green"],
         "creationDate": ["2025-01-01T12:45:00", "2025-01-01T12:46:00"],
         "editionDate": ["2025-01-01T12:45:00", "2025-01-01T12:46:00"]
@@ -21,7 +21,7 @@
       ]
     },
     
-    "powerConsumptionJSON": {
+    "powerConsumption": {
 
       "totalPerProbe": [
         28.82, 18.98, 34.49, 20.75, 34.1, 19.4, 29.31, 24.33, 27.99, 31.43,
@@ -44,7 +44,7 @@
       "pricePerkWh": 1.30    
     },
 
-    "ThermometerJSON": 
+    "Thermometer": 
     {
       "last30TempProbe": [
         28.82, 18.98, 34.49, 20.75, 34.1, 19.4, 29.31, 24.33, 27.99, 31.43,
@@ -53,7 +53,7 @@
       ]
     },
 
-    "NPKJSON":
+    "NPK":
     {
       "totalPerCycle": [
         {
