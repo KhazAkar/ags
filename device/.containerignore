@@ -40,3 +40,6 @@
 
 # Default directory for output of `go mod vendor`
 /vendor/*
+
+# Tests folder
+/tests/*
