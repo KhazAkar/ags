@@ -1,33 +1,8 @@
-FROM lukemathwalker/cargo-chef:latest-rust-1.83.0 as chef
+FROM go:1.24-alpine AS builder
 WORKDIR /app
-RUN apt update && apt install lld clang -v
-
-# Prepare Cargo.lock
-FROM chef AS planner
 COPY . .
-RUN cargo chef prepare --recipe-path recipe.json
-
-# Pre-build stuff
-FROM chef AS builder
-COPY --from=planner /app/recipe.json recipe.json
-RUN cargo chef cook --release --recipe-path recipe.json
-
-# Build our app
-COPY . .
-ENV SQLX_OFFLINE true
-RUN cargo build --release --bin newsletter_backend
-
-# Runtime stage
-FROM debian:bookworm-slim as runtime
-
-RUN : \
-    && apt-get update -y \
-    && apt-get install -y --no-install-recommends openssl ca-certificates \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
-WORKDIR /app
-COPY --from=builder /app/target/release/newsletter_backend newsletter
-COPY configuration configuration
-ENV APP_TARGET production
-ENTRYPOINT [ "./newsletter" ]
+RUN go build -o /app/main .
+FROM scratch
+USER user
+COPY  --from=builder --chown=user:user /app/main /main
+CMD ["./main"]
