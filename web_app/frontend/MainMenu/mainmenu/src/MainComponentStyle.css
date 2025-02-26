@@ -1,270 +1,195 @@
-
-/* Box sizing rules */
+/* Modern CSS Reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Prevent font size inflation */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+/* CSS Variables */
+:root {
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --gap: 10px;
+  --gapVal: 10px; /* Legacy - keep for compatibility */
+
+  /* Colors */
+  --primary-color: #00b167;
+  --secondary-color: #00db80;
+  --text-color: #DDD5D0;
+  --background-color: #010101;
+  --border-color: #32323F;
+  
+  /* Border */
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 5px;
+  
+  /* Typography */
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
-  margin-block-end: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core body defaults */
+/* Global Styles */
 body {
   min-height: 100vh;
   line-height: 1.5;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
-  line-height: 1.1;
+/* Main Component */
+.MainComponent {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-/* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
-  text-wrap: balance;
+/* Grid Layout */
+.outerGrid {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 105px minmax(0, 1fr) 300px;
+  column-gap: var(--gap);
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
+/* Menu Grid */
+.menuGrid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, auto) 1fr auto;
+  row-gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
+/* Center Grid */
+.centerGrid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 3fr 1fr 1fr 1fr;
+  gap: var(--gap);
 }
 
-/* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
-  font-family: inherit;
-  font-size: inherit;
+/* Right Grid */
+.rightGrid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 120px 1fr;
+  gap: var(--gap);
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
-}
-
-:root {
-  --gapVal:10px;
-
-  --var-border-color: #32323F;
-  --var-border-width: 1px;
-  --var-border-style: solid;
-  --var-border-radius: 5px;
-}
-
-
-@media screen and (min-width: 1281px) 
-{
-
-  body{
-    background-color: black;
-  }
-
-  .MainComponent
-  {
-    min-width: 1920px;
-    min-height: 900px;
-
-    width: 100vw; 
-    height: 49.5vw; /* height:width ratio = 9/16 = .5625  */
-    
-   }
-
-  .outerGrid
-  {
-    color: #DDD5D0;
-    background-color: rgb(1, 1, 1);
-    padding: 10px;
-    display: grid;
-    height: 100%;
-    grid-template-columns: 1fr 25fr 5fr;
-    grid-template-rows: 100%;
-    column-gap: var(--gapVal );
-  }
-
-  .menuGrid
-  {
-    height: 100%;
-    width: 100%;
-    
-    background-color: rgba(0, 0, 0,0);
-    display: grid;
-    grid-template-rows: 2fr 2fr 2fr 2fr 38.5fr 2fr;
-    grid-template-columns: 1fr;
-    row-gap: var(--gapVal );
-    padding: var(--gapVal );
-
-    border-color: #32323F;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 10px;
-
-  }
-
-  .centerGrid
-  {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0,0);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 3fr 1fr 1fr 1fr;
-    column-gap: var(--gapVal );
-    row-gap: var(--gapVal );
-  }
-
-  .rightGrid
-  {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0,0);
-    grid-template-columns: 1fr;
-    grid-template-rows: 10% calc(90% - var(--gapVal ));
-    display: grid;
-    column-gap: var(--gapVal );
-    row-gap: var(--gapVal );
-  }
-
-  .content1
-{
+/* Content Containers */
+.content1, .content2a, .content2b, .content2c, .content4, .content5, .contentCam {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0,0);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
+  border-radius: var(--border-radius);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  overflow: hidden;
 }
 
-.content2a
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0,0);
+/* Specific Grid Positions */
+.content2a {
   grid-column: 1 / 2;
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
- 
 }
 
-.content2b
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
+.content2b {
   grid-column: 1 / 2;
-  gap: var(--gapVal);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
 }
 
-.content2c
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
+.content2c {
   grid-column: 1 / 2;
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
 }
 
-.contentCam
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
+.contentCam {
   grid-column: 2 / 4;
   grid-row: 2 / 5;
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
 }
 
-.tempButton
-{
-  width: 40px;
-  height: 40px;
-  border-radius: 10px 10px 10px 10px;
-  background-color: #DDD5D0;
-}
-
-.content4
-{
+/* Button Container */
+.tempButton {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
 }
 
-
-.content5
-{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-
-  border-radius: var(--var-border-radius);
-  border-width: var(--var-border-width);
-  border-style: var(--var-border-style);
-  border-color: var(--var-border-color);
-}
-
-}
-
-@media screen and (min-width: 481px) and (max-width: 1280px) {
-  .MainComponent {
-    max-width: 100vw;
-    max-height: 100vh;
-    width: 1280px;
-    height: 720px;
-    background-color: rgb(88, 20, 20);
+/* Responsive Design */
+@media screen and (max-width: 1280px) {
+  .outerGrid {
+    grid-template-columns: 60px minmax(0, 1fr) 250px;
   }
 }
 
+@media screen and (max-width: 768px) {
+  .outerGrid {
+    grid-template-columns: 50px minmax(0, 1fr) 200px;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  
+  .centerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .contentCam {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+  }
+}
 
+/* Placeholder Content */
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--spacing-md);
+}
+
+.placeholder-content h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+}
+
+.placeholder-content p {
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.placeholder-content button {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.placeholder-content button:hover {
+  background-color: var(--secondary-color);
+}
