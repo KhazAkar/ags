@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4" pages="5">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.16 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36" version="26.0.16" pages="5">
   <diagram name="OverallView" id="iMTkxeB2DGwpaGkPtLTU">
     <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -324,71 +324,47 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="R2RZIZFhC3APE5sBShbt-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-1" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-1" value="Serial interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="130" width="120" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-2" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry x="550" y="130" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-2" value="I2C interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="180" width="120" height="40" as="geometry" />
+          <mxGeometry x="550" y="180" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-5" value="MQTT Broker" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="10" y="50" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-17" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="HBIGmiQNNAohoxz20zif-17" value="Platform Handler" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="320" width="120" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="HBIGmiQNNAohoxz20zif-19" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="610" y="40" />
-              <mxPoint x="290" y="40" />
-              <mxPoint x="290" y="200" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HBIGmiQNNAohoxz20zif-19" value="Simple&lt;div&gt;local&lt;/div&gt;&lt;div&gt;frontend&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="570" y="140" width="80" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-21" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Serial interface&lt;/h1&gt;&lt;p&gt;This module would be responsible for communication with fertilizers measurement sensor&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="110" y="460" width="180" height="120" as="geometry" />
+          <mxGeometry x="100" y="460" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="IIj5vsB7Ss8qr5SkvMdl-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;I2C interface&lt;/h1&gt;&lt;p&gt;This module would be responsible for communication with air humidity, pressure and temperature sensor system&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="310" y="460" width="180" height="120" as="geometry" />
+          <mxGeometry x="290" y="465" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="R2RZIZFhC3APE5sBShbt-1" target="R2RZIZFhC3APE5sBShbt-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="R2RZIZFhC3APE5sBShbt-1" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-1" value="ADC" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="240" width="50" height="60" as="geometry" />
+          <mxGeometry x="550" y="240" width="50" height="60" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-2" value="Parser" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="480" y="240" width="50" height="60" as="geometry" />
+          <mxGeometry x="620" y="240" width="50" height="60" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-5" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;ADC - Gravity&lt;/h1&gt;&lt;p&gt;This module would be responsible for reading soil moisture levels&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="500" y="460" width="180" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-6" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Platform handler&lt;/h1&gt;&lt;p&gt;This module would be responsible for few things:&lt;/p&gt;&lt;p&gt;1. Control code updates&lt;br&gt;2. HW interface hearbeat checker&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="110" y="590" width="180" height="170" as="geometry" />
+        <mxCell id="R2RZIZFhC3APE5sBShbt-6" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Platform handler&lt;/h1&gt;&lt;p&gt;This module would be responsible for few things:&lt;/p&gt;&lt;p&gt;1. Control code updates&lt;br&gt;2. HW interface controller &amp;amp; hearbeat checker&lt;br&gt;3. Applying profile information&lt;br&gt;to HW modules&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="100" y="740" width="180" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="R2RZIZFhC3APE5sBShbt-7" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="R2RZIZFhC3APE5sBShbt-7" target="R2RZIZFhC3APE5sBShbt-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-7" value="Message&lt;br&gt;exchange" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="190" y="60" width="70" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="R2RZIZFhC3APE5sBShbt-8" target="sl8ne3fgV3LR6pq-Fmdk-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-8" value="Message&lt;div&gt;router&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="190" y="170" width="70" height="60" as="geometry" />
+          <mxGeometry x="300" y="60" width="70" height="60" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-16" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-5" target="R2RZIZFhC3APE5sBShbt-7" edge="1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
@@ -396,29 +372,47 @@
             <mxPoint x="210" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-24" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local frontend&lt;/h1&gt;&lt;p&gt;Very simple, vanilla frontend which will show current measurements, refreshing every few seconds + graph.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="300" y="600" width="180" height="120" as="geometry" />
-        </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-25" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Message router &amp;amp; exchange&lt;/h1&gt;&lt;p&gt;Router is responsible for passing relevant information between further modules, and message exchange is responsible for communication with MQTT broker&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="500" y="590" width="180" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="R2RZIZFhC3APE5sBShbt-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="R2RZIZFhC3APE5sBShbt-26" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry x="500" y="575" width="180" height="170" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-26" value="GPIO control" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="410" y="380" width="120" height="40" as="geometry" />
+          <mxGeometry x="550" y="320" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-28" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;GPIO control&lt;/h1&gt;&lt;p&gt;This module would be responsible forcontrolling switches, fan, lights etc, based on external conditions.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="290" y="740" width="180" height="120" as="geometry" />
+          <mxGeometry x="100" y="600" width="180" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="RYmFaY8Xn2KupPgh-LN7-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;1-Wire interface&lt;/h1&gt;&lt;p&gt;Responsible for soil temperature monitoring, using DS18B20&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="490" y="770" width="200" height="100" as="geometry" />
+        <mxCell id="RYmFaY8Xn2KupPgh-LN7-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;1-Wire interface&lt;/h1&gt;&lt;p&gt;Responsible for soil temperature monitoring, using DS18B20&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="290" y="600" width="200" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="RYmFaY8Xn2KupPgh-LN7-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="RYmFaY8Xn2KupPgh-LN7-2" target="R2RZIZFhC3APE5sBShbt-8">
+        <mxCell id="RYmFaY8Xn2KupPgh-LN7-2" value="1-Wire interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="550" y="70" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-1" value="Profile setup" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="150" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="RYmFaY8Xn2KupPgh-LN7-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="RYmFaY8Xn2KupPgh-LN7-2" value="1-Wire interface" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="410" y="70" width="120" height="40" as="geometry" />
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="HBIGmiQNNAohoxz20zif-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="HBIGmiQNNAohoxz20zif-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="R2RZIZFhC3APE5sBShbt-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="R2RZIZFhC3APE5sBShbt-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="R2RZIZFhC3APE5sBShbt-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-16" value="Platform&lt;div&gt;Handler&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="155" width="80" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="sl8ne3fgV3LR6pq-Fmdk-22" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Profile setup&lt;/h1&gt;&lt;div&gt;This module will be responsible for:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Plant profile storage&lt;/div&gt;&lt;div&gt;2. Signaling profile change to&lt;/div&gt;&lt;div&gt;message&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;router&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="740" width="180" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -428,9 +422,6 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="XeypIktg2LdwRkeD5GnD-1" value="MQTT Broker" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="300" width="120" height="80" as="geometry" />
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
