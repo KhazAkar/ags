@@ -157,7 +157,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="5HZY-o9RHy6J1S_3jtmK" name="CloudArch">
-    <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3074" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -166,44 +166,117 @@
             <mxPoint x="330" y="540" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Y31T8Gk-wSxpJXGk1sMM-1" value="Serverless Components&lt;br&gt;&lt;br&gt;Event-Driven Tasks:&lt;br&gt;Data Ingestion: Use serverless functions to handle incoming data from sensors via MQTT. This allows for automatic scaling based on the volume of incoming data.&lt;br&gt;Notifications: Implement serverless functions to receive alerts / notifications from users based on specific conditions (e.g., low water levels, temperature alerts).&amp;nbsp; Sending will be done on device side as part of heartbeat&lt;br&gt;&lt;br&gt;Data Processing:&lt;br&gt;Real-time Analytics: Use serverless functions to perform real-time data analysis and generate insights. This can include simple calculations or triggering events based on sensor data thresholds.&lt;br&gt;&lt;br&gt;Logging and Monitoring:&lt;br&gt;Log Management: Use serverless functions to process and store logs for monitoring and debugging purposes. Device will send data to blobs, and functions will process them whenether needed.&lt;br&gt;&lt;br&gt;Server-Based Components&lt;br&gt;&lt;br&gt;Data Storage:&lt;br&gt;Database Management: Host your SQL database on a server to ensure consistent and reliable data storage. This includes storing historical sensor data, user settings, and system configurations.&lt;br&gt;&lt;br&gt;Complex Computations:&lt;br&gt;Machine Learning Models: Run complex machine learning models on a server for predictive analytics. This ensures that you have the necessary computational resources and can manage model updates more easily.&lt;br&gt;&lt;br&gt;Web Frontend:&lt;br&gt;Web Serve with API Endpoints: Host the web control panel on a server to provide a consistent user experience. This includes serving the web application and handling user sessions.&lt;br&gt;Additionally, it should be the central place of managing connected devices of the user&lt;br&gt;&lt;br&gt;MQTT Broker:&lt;br&gt;Message Broker: Host the MQTT broker on a server to ensure reliable message delivery between the SBC and the cloud. This is crucial for maintaining communication integrity.&lt;br&gt;&lt;br&gt;Background Services:&lt;br&gt;Scheduled Tasks: Run background services on a server for tasks that require consistent execution, such as data backup, system maintenance, and periodic data analysis." style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="720" y="285" width="560" height="600" as="geometry" />
-        </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="YpwLkuzNLS9igNnn6vLt-1" target="90GFgLTcDYuAD_9nFkly-2">
+        <mxCell id="90GFgLTcDYuAD_9nFkly-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.96;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="YpwLkuzNLS9igNnn6vLt-1" target="90GFgLTcDYuAD_9nFkly-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.07;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="YpwLkuzNLS9igNnn6vLt-1" target="90GFgLTcDYuAD_9nFkly-3">
+        <mxCell id="YpwLkuzNLS9igNnn6vLt-1" value="SBC" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-1270" y="217.5" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="90GFgLTcDYuAD_9nFkly-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-1060" y="50" width="670" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="90GFgLTcDYuAD_9nFkly-2" target="gF0L319TxVTMq7VCp5SH-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YpwLkuzNLS9igNnn6vLt-1" value="SBC" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="780" y="160" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="10" y="40" width="630" height="670" as="geometry" />
-        </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="90GFgLTcDYuAD_9nFkly-2" target="90GFgLTcDYuAD_9nFkly-4">
+        <mxCell id="gF0L319TxVTMq7VCp5SH-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="90GFgLTcDYuAD_9nFkly-2" target="gF0L319TxVTMq7VCp5SH-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-2" value="Blob&lt;div&gt;storage&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="550" y="80" width="60" height="80" as="geometry" />
+        <mxCell id="90GFgLTcDYuAD_9nFkly-2" value="Blob&lt;div&gt;storage&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-1020" y="350" width="60" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-3" value="MQTT broker" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="185" width="110" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-4" value="blob_processor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-          <mxGeometry x="390" y="90" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-8" value="PostgreSQL&lt;div&gt;DB&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="210" y="90" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="90GFgLTcDYuAD_9nFkly-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="90GFgLTcDYuAD_9nFkly-4" target="90GFgLTcDYuAD_9nFkly-8">
+        <mxCell id="gF0L319TxVTMq7VCp5SH-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="90GFgLTcDYuAD_9nFkly-3" target="gF0L319TxVTMq7VCp5SH-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="90GFgLTcDYuAD_9nFkly-3" value="MQTT broker" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="-1020" y="150" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="90GFgLTcDYuAD_9nFkly-8" target="gF0L319TxVTMq7VCp5SH-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-240" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-340" y="390" />
+              <mxPoint x="-340" y="350" />
+              <mxPoint x="-240" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="90GFgLTcDYuAD_9nFkly-8" value="PostgreSQL&lt;div&gt;DB&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-690" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-1" value="blob_processor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="-890" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-1" target="90GFgLTcDYuAD_9nFkly-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-4" value="heartbeat_handler" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="-840" y="147.5" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-6" value="Web frontend" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-270" y="217.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-9" target="gF0L319TxVTMq7VCp5SH-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-9" target="gF0L319TxVTMq7VCp5SH-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-9" value="Log&lt;div&gt;storage&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="-630" y="170" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-4" target="gF0L319TxVTMq7VCp5SH-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-11" target="gF0L319TxVTMq7VCp5SH-14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-860" y="280" />
+              <mxPoint x="-860" y="330" />
+              <mxPoint x="-560" y="330" />
+              <mxPoint x="-560" y="480" />
+              <mxPoint x="-820" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-11" value="alert_analyzer" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="-830" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.4;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" parent="1" source="90GFgLTcDYuAD_9nFkly-3" target="YpwLkuzNLS9igNnn6vLt-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-14" target="gF0L319TxVTMq7VCp5SH-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-14" value="Plant profile adjusting&lt;div&gt;ML model&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="-890" y="500" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-16" target="90GFgLTcDYuAD_9nFkly-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-820" y="690" />
+              <mxPoint x="-440" y="690" />
+              <mxPoint x="-440" y="90" />
+              <mxPoint x="-965" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-16" target="gF0L319TxVTMq7VCp5SH-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-16" value="ml_processor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="-880" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gF0L319TxVTMq7VCp5SH-22" target="gF0L319TxVTMq7VCp5SH-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gF0L319TxVTMq7VCp5SH-22" value="Log&lt;div&gt;analyzer&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-530" y="230" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="qrNnNyqFYiNbae-tRahA" name="DeviceCodeArch">
-    <mxGraphModel dx="1671" dy="966" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="qrNnNyqFYiNbae-tRahA" name="DeviceArch">
+    <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -291,7 +364,7 @@
         <mxCell id="sl8ne3fgV3LR6pq-Fmdk-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="roQP3Hz-pYpjKYrFa7oy-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="roQP3Hz-pYpjKYrFa7oy-1">
+        <mxCell id="roQP3Hz-pYpjKYrFa7oy-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-16" target="roQP3Hz-pYpjKYrFa7oy-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sl8ne3fgV3LR6pq-Fmdk-16" value="Platform&lt;div&gt;Handler&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -300,25 +373,25 @@
         <mxCell id="sl8ne3fgV3LR6pq-Fmdk-22" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Profile setup&lt;/h1&gt;&lt;div&gt;This module will be responsible for:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Plant profile storage&lt;/div&gt;&lt;div&gt;2. Signaling profile change to&lt;/div&gt;&lt;div&gt;message&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;router&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="220" y="680" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="roQP3Hz-pYpjKYrFa7oy-1" value="Edge AI module" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="roQP3Hz-pYpjKYrFa7oy-1" value="Edge AI module" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="290" y="270" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="roQP3Hz-pYpjKYrFa7oy-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.194;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-1" target="roQP3Hz-pYpjKYrFa7oy-1">
+        <mxCell id="roQP3Hz-pYpjKYrFa7oy-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.194;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" parent="1" source="sl8ne3fgV3LR6pq-Fmdk-1" target="roQP3Hz-pYpjKYrFa7oy-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="roQP3Hz-pYpjKYrFa7oy-6" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Edge AI module&lt;/h1&gt;&lt;p&gt;Powered by small AI model, fine-tuned (target) and RAG-enhanced (on start), optional module which will be responsible for local, rapid decision making and adjustments based on measurements gathered from sensors, historical data from SQlite DB and profile settings&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="roQP3Hz-pYpjKYrFa7oy-6" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Edge AI module&lt;/h1&gt;&lt;p&gt;Powered by small AI model, fine-tuned (target) and RAG-enhanced (on start), optional module which will be responsible for local, rapid decision making and adjustments based on measurements gathered from sensors, historical data from SQlite DB and profile settings&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="440" y="700" width="180" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-1" value="Local&lt;div&gt;data&lt;/div&gt;&lt;div&gt;storage&lt;/div&gt;&lt;div&gt;(SQLite)&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-1" value="Local&lt;div&gt;data&lt;/div&gt;&lt;div&gt;storage&lt;/div&gt;&lt;div&gt;(SQLite)&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="190" y="160" width="70" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="R2RZIZFhC3APE5sBShbt-7" target="M0Ps3pdEvH2lT0RtJjz2-1">
+        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="R2RZIZFhC3APE5sBShbt-7" target="M0Ps3pdEvH2lT0RtJjz2-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=0;endArrow=none;" edge="1" parent="1" source="roQP3Hz-pYpjKYrFa7oy-1" target="M0Ps3pdEvH2lT0RtJjz2-1">
+        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=0;endArrow=none;" parent="1" source="roQP3Hz-pYpjKYrFa7oy-1" target="M0Ps3pdEvH2lT0RtJjz2-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-4" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local data storage (SQLite)&lt;/h1&gt;&lt;p&gt;Acts as historical data holder, useful for local data backup and dataset for edge AI module&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-4" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local data storage (SQLite)&lt;/h1&gt;&lt;p&gt;Acts as historical data holder, useful for local data backup and dataset for edge AI module&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="640" y="520" width="180" height="165" as="geometry" />
         </mxCell>
       </root>
