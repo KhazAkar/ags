@@ -276,7 +276,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="qrNnNyqFYiNbae-tRahA" name="DeviceArch">
-    <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1872" dy="855" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -391,8 +391,20 @@
         <mxCell id="M0Ps3pdEvH2lT0RtJjz2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=0;endArrow=none;" parent="1" source="roQP3Hz-pYpjKYrFa7oy-1" target="M0Ps3pdEvH2lT0RtJjz2-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-4" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local data storage (SQLite)&lt;/h1&gt;&lt;p&gt;Acts as historical data holder, useful for local data backup and dataset for edge AI module&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="640" y="520" width="180" height="165" as="geometry" />
+        <mxCell id="M0Ps3pdEvH2lT0RtJjz2-4" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local data storage (SQLite)&lt;/h1&gt;&lt;p&gt;Acts as data holder, useful for local data backup and dataset for edge AI module&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="630" y="410" width="180" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="v3ljemEIRhPSZxIx5FJs-1" value="Local web interface" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v3ljemEIRhPSZxIx5FJs-2" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;width=16;startSize=5.33;" edge="1" parent="1" source="v3ljemEIRhPSZxIx5FJs-1" target="R2RZIZFhC3APE5sBShbt-7">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="120" y="152.5" as="sourcePoint" />
+            <mxPoint x="180" y="152.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v3ljemEIRhPSZxIx5FJs-3" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local web interface&lt;/h1&gt;&lt;div&gt;Simple interface for data stored in the system, with limited edit capabilities, like custom profiles (after being enabled) etc&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="585" width="180" height="165" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
