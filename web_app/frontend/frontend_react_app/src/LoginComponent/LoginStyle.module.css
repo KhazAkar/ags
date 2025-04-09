@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../resources/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.page {
+
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #282c34;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-image: url('../resources/photos/palm.jpg');
+    background-size: cover;
+    min-width: 650px;
+    min-height: 650px;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+.loginWindow
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 8fr;
+
+    min-width: 400px;
+    width: 400px;
+
+    min-height: 500px;
+    height: 500px;
+
+    border-radius: 5px;
+    background-color: rgba(39, 39, 39,0.9); /*#4C4E5D*/
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    align-items: center;
+    justify-items: center;
+}
+
+.loginGrid
+{
+    display: grid;
+    height: 80%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 3fr 3fr;
+    padding: 15px;
+}
+
+.buttonGrid
+{
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+}

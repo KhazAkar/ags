@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../resources/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  .page {
+  
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+      text-align: center;
+      background-color: #282c34;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      color: white;
+      background-image: url('../resources/photos/palm.jpg');
+      background-size: cover;
+      min-width: 650px;
+      min-height: 650px;
+    }
+
+.registerWindow
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+
+    min-width: 400px;
+    width: 400px;
+
+    min-height: 500px;
+    height: 500px;
+
+    border-radius: 5px;
+    background-color: rgba(39, 39, 39,0.9); /*#4C4E5D*/
+    align-items: center;
+    justify-items: center;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.registerGrid
+{
+    display: grid;
+    height: 90%;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 20% 20% 30%;
+    padding: 15px;
+}
+
+.buttonGrid
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
