@@ -1,0 +1,205 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ----------------------------------------------------------------------------------- */
+/* -------------------------------- MY CSS IS FOLLOWING -------------------------------*/
+/* ----------------------------------------------------------------------------------- */
+
+/* box-sizing: border-box; to all elements on the page */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../resources/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --gapVal: 10px;
+    --var-border-color: #32323F;
+    --var-border-width: 2px;
+    --var-border-style: solid;
+    --var-border-radius: 10px;
+}
+
+.appWindow {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    /* Apply the font here */
+    box-sizing: border-box;
+}
+
+.wrappingGrid {
+
+    height: 100%;
+    width: 100%;
+    color: #DDD5D0;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    height: 100%;
+    grid-template-columns: 70px 30fr;
+    grid-template-rows: 100%;
+    column-gap: var(--gapVal);
+}
+
+.leftColumnGrid {
+
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+}
+
+.centerColumnGrid {
+
+    height: 100%;
+    width: 100%;
+    background-color: rgba(207, 91, 91, 0);
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    column-gap: var(--gapVal);
+    row-gap: var(--gapVal);
+}
