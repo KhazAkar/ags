@@ -9,13 +9,16 @@ import { ReactComponent as HomeSVG } from '../resources/svg/home.svg';
 import { ReactComponent as LogOutSVG } from '../resources/svg/logout.svg';
 
 function MenuButton({ path, IconSVG }: {path: string, IconSVG: React.FC<React.SVGProps<SVGSVGElement>>}) {
-  return (<NavLink to={path} end
-    className={({ isActive }) => isActive ? menuStyle.activeButton : menuStyle.normalButton} >
-    <div className={menuStyle.svg}>
-      <IconSVG className={menuStyle.svgInner} />
-    </div>
-  </NavLink>
+
+  return (  
+    <NavLink to={path} end
+      className={({ isActive }) => isActive ? menuStyle.activeButton : menuStyle.normalButton} >
+      <div className={menuStyle.svg}>
+        <IconSVG className={menuStyle.svgInner} />
+      </div>
+    </NavLink>
   )
+
 }
 
 export default function MenuComp() {
@@ -31,7 +34,7 @@ export default function MenuComp() {
         <div>
           {/*blank div because of my idea for that component in css xdxdxd */}
         </div>
-        
+
         <MenuButton path="/" IconSVG={LogOutSVG} /> {/*Here add some logic to log out the server and close the connection*/}
       </div>
     </div>

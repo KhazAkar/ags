@@ -2,7 +2,7 @@
 {
     width: 100%;
     height: 100%;
-    padding: 5px;
+    padding: var(--gapVal) 5px;
 }
 
 .menuWrapperGrid{
@@ -19,7 +19,7 @@
     border-style: var(--var-border-style);
     border-radius: var(--var-border-radius);
     
-    padding: 7px 0px;
+    padding: 8px 0px;
     align-items: center;
     justify-items: center;
 

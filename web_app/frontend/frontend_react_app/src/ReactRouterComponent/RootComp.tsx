@@ -8,11 +8,11 @@ export default function RootComp()
     return(
         <div className={rootStyle.appWindow}>
             <div className={rootStyle.wrappingGrid}>
-                <div className={rootStyle.leftColumnGrid}>
+                <div className={rootStyle.mainColumn}>
                     <MenuComp/>
                 </div>
                 
-                <div className={rootStyle.centerColumnGrid}>
+                <div className={rootStyle.mainColumn}>
                     <Outlet />
                 </div>
             </div>
