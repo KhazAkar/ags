@@ -546,7 +546,7 @@ function reducerHandler(state:any, action:any)
 interface ConfigContextProps 
 {
     children : React.ReactNode,
-     reloader : any
+    reloader : any
 }
 
 export default function ConfigContextComponent({children, reloader}: ConfigContextProps)

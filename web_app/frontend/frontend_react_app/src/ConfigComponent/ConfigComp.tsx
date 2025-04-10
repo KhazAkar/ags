@@ -5,7 +5,7 @@ import ConfigBarComponent from "./ConfigBarComponent";
 import ConfigContextComponent from './ConfigContextComponent'
 
 export default function ConfigComp() {
-    let [state, reloadConfigPage] = useState<any>(0);
+    let [state, reloadConfigPage] = useState<number>(0);
     return (
         <div className={configPanelStyle.container}>
 

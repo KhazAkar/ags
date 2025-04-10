@@ -39,7 +39,7 @@ export default function ManageSliderComponents({children, roleFunction=undefined
     }
 
     function checkIfExist(timeInSec: any) {
-        return objArray.some((x : any) => {return ((x.time == timeInSec) || (x.label == label.current.value) || (x.label == `${hours.current.value}:${minutes.current.value}:${seconds.current.value}`) )});
+        return objArray.some((x : any) => {return ((x.time === timeInSec) || (x.label === label.current.value) || (x.label === `${hours.current.value}:${minutes.current.value}:${seconds.current.value}`) )});
     }
 
     function isNumber(value : any) 
@@ -126,11 +126,11 @@ export default function ManageSliderComponents({children, roleFunction=undefined
                                 switch(role)
                                 {
                                     case 'edit':
-                                        label.current.value == "def fill with time stamp" ?  roleFunction(timeInSec, tempTimeLabel,index) : roleFunction(timeInSec,  label.current.value + '\n' + `(${tempTimeLabel})`, index);   
+                                        label.current.value === "def fill with time stamp" ?  roleFunction(timeInSec, tempTimeLabel,index) : roleFunction(timeInSec,  `${label.current.value}\n(${tempTimeLabel})`, index);   
                                     break;
 
                                     case 'add':
-                                        label.current.value == "def fill with time stamp"?  roleFunction(timeInSec, tempTimeLabel) : roleFunction(timeInSec, label.current.value + '\n' + `(${tempTimeLabel})`); 
+                                        label.current.value === "def fill with time stamp"?  roleFunction(timeInSec, tempTimeLabel) : roleFunction(timeInSec, `${label.current.value}\n(${tempTimeLabel})`); 
                                     break;
                                 } 
                             }

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, {useContext } from 'react';
 import ButtonComp from '../ButtonComponent/ButtonComp';
 import barStyle from './ConfigBarStyle.module.css';
 import svgDownload from '../resources/svg/download.svg';
@@ -12,7 +12,7 @@ import DisplayEditComponent from './DisplayEditComponent';
 
 export default function ConfigBarComponent() {
     
-    let { sliderData, dispatchChart, reloader } = useContext<any>(ProfileContext);
+    let { sliderData: _ , dispatchChart, reloader } = useContext<any>(ProfileContext);
 
     function addNew() {
         dispatchChart({ type: "ADD_NEW_PROFILE", load: {} })

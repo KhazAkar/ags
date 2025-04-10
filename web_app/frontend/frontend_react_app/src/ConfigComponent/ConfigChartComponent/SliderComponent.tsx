@@ -47,17 +47,17 @@ interface SliderComponentProps {
 export default function SliderComponent({ children, minY, maxY, startTime, endTime, chartLabel }: SliderComponentProps) {
 
   let { sliderData, dispatchChart } = useContext<any>(ProfileContext);
-  let [update, setUpdate] = useState<any>(0);
-  let [editIndex, setEditIndex] = useState<any>(null);
+  let [update, setUpdate] = useState<string>("0");
+  let [editIndex, setEditIndex] = useState<number | null>(null);
 
   // 
   let iii = useRef(0) //it find out the name of the panel for example TEMETARUTE etc
-  while (chartLabel != sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].sliderNames) {
+  while (chartLabel !== sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].sliderNames) {
     iii.current++;
   }
 
-  let minYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].minY
-  let maxYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].maxY
+  //let minYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].minY
+  //let maxYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].maxY
 
   function getFromContext() {
     let newOne = [];
@@ -79,7 +79,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   let isCreatingNewSlider = useRef<any | null>(false);
   let [hoveredIndex, setHoveredIndex] = useState<any | null>(null); // New state for hovered index
   //let mathFunArray = useRef([]); //{startT:0, endT:0, formula:""}
-  let downloadRef = useRef<any | null>(0);
+  //let downloadRef = useRef<any | null>(0);
 
 
   //it is additional array to help with creating a copy beacause of error:  React Hook "useRef" is called in function "addSlider"
@@ -88,6 +88,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
   // React Hook names must start with the word "use"  react-hooks/rules-of-hooks
   let newArray = useRef<any | null>([]);
 
+  /*
   function generateLinearFunctionArray() {
     let coeficient = 0;
     let interceptsOfLine = 0;
@@ -99,6 +100,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
       //mathFunArray.current.push({ coeficient: coeficient, interceptsOfLine: interceptsOfLine, formula: `${coeficient}x + ${interceptsOfLine}` })
     }
   }
+  */
 
   function editSlider(timeLabel: any, titleLabel: any, index: any) {
     sliderArray.current[index].time = timeLabel;
