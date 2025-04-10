@@ -1,0 +1,91 @@
+/* Kontener dla rozwijanej listy */
+.DropDownContainer {
+    position: relative;
+    display: flex;
+    width: 300px;
+    height: 40px;
+    color: #ddd;
+    border-radius: var(--var-border-radius);
+    border-width: var(--var-border-width);
+    border-style: var(--var-border-style);
+    border-color: var(--var-border-color);
+    margin: 0px 10px 0px 10px;;
+}
+
+.DropDownButton
+{
+    width: inherit;
+    cursor: pointer;
+    justify-content: left;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 100%;
+    align-items: center;
+    align-content: center;
+    padding: 0px 5px 0px 5px;
+}
+
+.DropDownElement
+{
+    display: flex;
+    position: relative;
+    padding: 2px 5px 2px 5px;
+    height: 40px;
+    width: inherit;
+    cursor: pointer;
+    z-index: 11;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+}
+
+.DropDownElement:hover
+{
+    background-color: rgb(73, 73, 73);
+}
+
+.dropDownTopic
+{
+    overflow: hidden;
+}
+.DropDownElementActive
+{
+    display: flex;
+    position: relative;
+    padding: 2px 5px 2px 5px;
+    height: 40px;
+    width: inherit;
+    cursor: pointer;
+    z-index: 11;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+    background-color: rgb(65, 133, 20);
+}
+
+.DropDownElementActive:hover
+{
+    background-color: rgb(121, 228, 33);
+    color: rgb(59, 59, 59);
+}
+
+.DropDownMenuList
+{
+    position: absolute;
+    transform: translateY(40px);
+    z-index: 10;
+    height: 200px;
+    width: inherit;
+    background-color: rgb(43, 43, 43);
+    visibility: visible; /* Show the menu */
+    border-radius: 0 0 5px 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dropdownIcon
+{
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}

@@ -1,0 +1,122 @@
+.sliderPresentation {
+    padding-left: 3%;
+    display: grid;
+    grid-template-columns: 80px auto 80px; /* Adjusts the first column to 40px width */
+    align-items: center; /* Vertically aligns items in the center */
+    font-size: 14px;
+    height: 40px;
+}
+
+.valStyleAboveSlider
+{
+    background-color: #585858;
+    border-radius: 4px;
+    width: 25px;
+    height: 20px;
+}
+
+.ChartJS
+{
+    width: 910px;
+    min-width: 900px;
+    min-height: 700px;
+    height: auto;
+}
+.valStyleAboveSliderContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+}
+
+.containerSlider {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    height: auto;
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+.optionPresentation
+{
+    padding: 0 10px 0 10px;
+    display: grid;
+    grid-template-columns: 50% 50%; /* Adjusts the first column to 40px width */
+    align-items: center; /* Vertically aligns items in the center */
+    font-size: 14px;
+}
+
+.clicableDiv:hover
+{
+    cursor: pointer;
+}
+
+.clicableDiv
+{
+    height: 20px;
+    width: 20px; 
+}
+
+.sizeSVG
+{
+    height: 20px;
+    width: 20px; 
+}
+.addContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+}
+.addButtonDiv
+{
+    width: 30px;
+    height: 30px;
+    background-color: #00b167;
+    border-radius: 3px;
+    box-shadow: 
+    3px 3px 0px hsl(155, 100%, 47%);
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+}
+
+.importExportButtons
+{
+    display: flex;
+    float: right;
+    align-items: center; /* Vertically aligns items in the center */
+    font-size: 13px;
+}
+
+.addButtonDiv:hover
+{
+    box-shadow: 
+    1px 1px 0px rgb(0, 240, 140);
+}
+
+.exportFile
+{
+    cursor: pointer;
+    background-color: #00b167;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0,0.5);
+    display: inline-block;
+    border-radius: 3px;
+    border: 0px;
+    padding: 0px;
+}
+
+.importFile 
+{
+    display: none; /* Hide the actual file input */
+}
+
+.importlabel
+{
+    cursor:pointer;
+}
+
+

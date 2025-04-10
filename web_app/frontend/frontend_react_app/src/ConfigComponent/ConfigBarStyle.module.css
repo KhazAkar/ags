@@ -1,0 +1,21 @@
+.barComponentContainer
+{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;  /* Fixed width or adjust as needed */
+    display: grid;
+    grid-template-columns: 8fr 55fr 8fr 2.5fr 2.5fr 2.5fr 2.5fr 2.5fr;
+    grid-column-gap: 10px;
+    padding: 10px;
+    
+    position: relative;
+    z-index: 8;
+
+    align-items: center;
+    align-content: center;
+
+    border-radius: var(--var-border-radius);
+    border-width: var(--var-border-width);
+    border-style: var(--var-border-style);
+    border-color: var(--var-border-color);
+}

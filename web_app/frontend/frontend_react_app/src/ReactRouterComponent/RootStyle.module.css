@@ -155,10 +155,10 @@ table {
 
 :root {
     --gapVal: 10px;
-    --var-border-color: #32323F;
+    --var-border-color: rgb(63, 63, 73);
     --var-border-width: 2px;
     --var-border-style: solid;
-    --var-border-radius: 10px;
+    --var-border-radius: 7px;
 }
 
 body

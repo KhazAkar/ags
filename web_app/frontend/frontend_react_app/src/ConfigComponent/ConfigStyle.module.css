@@ -1,24 +1,51 @@
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
 
 .container
 {
     width: 100%;
     height: 100%;
+    display: flex;
     padding: var(--gapVal) 5px var(--gapVal) 0px;
 }
 
-.gridWrapper
-{
-    width: 100%;
-    height: 100%;
-    display: grid;
+/* Anything that has been anchored to should have extra scroll margin */
+  .gridWrapper {
     box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    display: grid;
 
-    grid-template-columns: 2fr 8fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: var(--gapVal);
+    grid-template-rows: 60px 1fr; 
+
+    grid-template-columns: 1fr; 
+    grid-row-gap: var(--gapVal);
+    overflow: hidden;
+  }
+  
+  .outerGridCCC {
+    box-sizing: border-box;
+    width: 100%;  /* Fixed width or adjust as needed */
+    height: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(6, auto); 
+    justify-items: center; /* Centers the grid items */
+    
+    row-gap: var(--gapVal);
+    overflow-y: auto;
+    overflow-x: hidden;
 
     border-radius: var(--var-border-radius);
     border-width: var(--var-border-width);
     border-style: var(--var-border-style);
     border-color: var(--var-border-color);
-}
+  }
+  
+
+
