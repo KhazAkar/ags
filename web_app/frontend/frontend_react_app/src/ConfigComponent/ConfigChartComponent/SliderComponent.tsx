@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useRef, useContext } from 'react';
 import { ProfileContext } from '../ConfigContextComponent';
-import Button from '../../ButtonComponent/ButtonComp';
+import ButtonComp from '../../ButtonComponent/ButtonComp';
 import ManageSliderComponents from './ManageSliderComponents';
 import TooltipSlider from './TooltipSlider';
 import 'rc-slider/assets/index.css';
@@ -34,7 +34,6 @@ ChartJS.register(
   Legend
 );
 
-
 interface SliderComponentProps {
   children?: React.ReactNode,
   minY?: number,
@@ -44,65 +43,49 @@ interface SliderComponentProps {
   chartLabel?: string,
 }
 
+interface SliderItem {
+  time: number;   // or string or Date? Depends on your data
+  val: number;
+  label: string;
+};
+
 export default function SliderComponent({ children, minY, maxY, startTime, endTime, chartLabel }: SliderComponentProps) {
 
   let { sliderData, dispatchChart } = useContext<any>(ProfileContext);
-  let [update, setUpdate] = useState<string>("0");
+  let [update, setUpdate] = useState<string>("0"); //refresh the component
   let [editIndex, setEditIndex] = useState<number | null>(null);
 
-  // 
-  let iii = useRef(0) //it find out the name of the panel for example TEMETARUTE etc
-  while (chartLabel !== sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].sliderNames) {
-    iii.current++;
+  function findIndexOfPanel() { //look for a index for Specified component in the sliderData array
+    let index = 0
+    while (chartLabel !== sliderData.controlPanelData[sliderData.currentIndex].dataset[index].sliderNames) {
+      index++;
+    }
+    return index;
   }
 
-  //let minYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].minY
-  //let maxYq = sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].maxY
+  let indexOfPanel = useRef(findIndexOfPanel()) //it find out the name of the panel for example TEMETARUTE etc
 
-  function getFromContext() {
+  function getInitSlidersFromContext() {
     let newOne = [];
+    let currentIndexSlider = sliderData.controlPanelData[sliderData.currentIndex].dataset[indexOfPanel.current];
 
-    for (let i = 0; i < sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].val.length; i++) {
+    for (let i = 0; i < currentIndexSlider.val.length; i++) {
       newOne.push({
-        time: sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].time[i],
-        val: sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].val[i],
-        label: sliderData.controlPanelData[sliderData.currentIndex].dataset[iii.current].label[i]
-
+        time: currentIndexSlider.time[i],
+        val: currentIndexSlider.val[i],
+        label: currentIndexSlider.label[i]
       });
     }
 
     return newOne;
   }
 
-  let xArray = getFromContext();
-  let sliderArray = useRef<any | null>([...xArray]);
-  let isCreatingNewSlider = useRef<any | null>(false);
-  let [hoveredIndex, setHoveredIndex] = useState<any | null>(null); // New state for hovered index
-  //let mathFunArray = useRef([]); //{startT:0, endT:0, formula:""}
-  //let downloadRef = useRef<any | null>(0);
-
-
-  //it is additional array to help with creating a copy beacause of error:  React Hook "useRef" is called in function "addSlider"
-  //that is neither a React function component nor a custom React Hook function.
-  // React component names must start with an uppercase letter.
-  // React Hook names must start with the word "use"  react-hooks/rules-of-hooks
-  let newArray = useRef<any | null>([]);
-
-  /*
-  function generateLinearFunctionArray() {
-    let coeficient = 0;
-    let interceptsOfLine = 0;
-    //mathFunArray.current = [];
-
-    for (let i = 1; i < sliderArray.current.length; i++) {
-      coeficient = ((sliderArray.current[i].val - sliderArray.current[i - 1].val) / (sliderArray.current[i].time - sliderArray.current[i - 1].time));
-      interceptsOfLine = sliderArray.current[i - 1].val - (coeficient * sliderArray.current[i - 1].time);
-      //mathFunArray.current.push({ coeficient: coeficient, interceptsOfLine: interceptsOfLine, formula: `${coeficient}x + ${interceptsOfLine}` })
-    }
-  }
-  */
+  let sliderArray = useRef<SliderItem[]>([...getInitSlidersFromContext()]); //it return a array
+  let isCreatingNewSlider = useRef<boolean>(false);
+  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // New state for hovered index
 
   function editSlider(timeLabel: any, titleLabel: any, index: any) {
+    
     sliderArray.current[index].time = timeLabel;
     sliderArray.current[index].label = titleLabel;
 
@@ -112,6 +95,12 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     closeEditFun();
     setEditIndex(() => null)
   }
+
+  //it is additional array to help with creating a copy beacause of error:  React Hook "useRef" is called in function "addSlider"
+  //that is neither a React function component nor a custom React Hook function.
+  // React component names must start with an uppercase letter.
+  // React Hook names must start with the word "use"  react-hooks/rules-of-hooks
+  let newArray = useRef<any>([]);
 
   function addSlider(timeLabel: any, titleLabel: any) //add sliders bettwen startTime and endTime sliders in specified
   {
@@ -133,9 +122,8 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     setUpdate(() => "update" + sliderArray.current.length);
   }
 
-  function updateSlider(x: any, val: any) {
-
-    x.val = val;
+  function updateSlider(slider: any, val: any) {
+    slider.val = val;
     setUpdate(() => update + 1);
   }
 
@@ -157,7 +145,6 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     labels: [...sliderArray.current.map((x: any) => x.label)],
     datasets: [{
       label: chartLabel,
-      /*formulaFun: (x) => {return 2*x*x - 10;},*/
       borderColor: "rgba(75, 192, 192, 1)",
       data: [...sliderArray.current.map((x: any) => x.val)],
       fill: false,
@@ -180,45 +167,52 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     setUpdate(() => update + 1);
   }
 
+
+  function optionButton(fun: any, SVG: any) {
+    return (
+      <div className='clicableDiv' onClick={() => fun()}>
+        <SVG className='sizeSVG' />
+      </div>
+    )
+  }
+
   function returnSlider() {
-    return sliderArray.current.map((x: any, index: number) => (
+    return sliderArray.current.map((slider: any, index: number) => (
       <div
+        key = {index+index}
         className='containerSlider'
         onMouseLeave={() => { setHoveredIndex(null); }} // Clear hover on leave
         onMouseEnter={() => { setHoveredIndex(index); }} // Set hovered index on enter
       >
         <div className='valStyleAboveSliderContainer'>
-          <div className='valStyleAboveSlider'>{x.val}</div>
+          <div className='valStyleAboveSlider'>
+            {slider.val}
+          </div>
         </div>
 
         <div className='sliderPresentation'>
-          <div style={{ whiteSpace: "pre-line" }} >{x.label}</div>
-          <TooltipSlider
+          <div className="sliderPresentation_label">
+            {slider.label}
+          </div>
 
+          <TooltipSlider
             min={minY}
             max={maxY}
-            value={x.val}
-            onChange={(val) => updateSlider(x, val)}
+            value={slider.val}
+            onChange={(val) => updateSlider(slider, val)} //when user move the circle then the new value is asigned to slider
           />
-          {hoveredIndex === index && ( // Check if current index is hovered
+
+          {hoveredIndex === index && ( // Check if current index is hovered and if yes then print buttons with option and if index is > 0 and < n then also allow to delete
             <div className='optionPresentation'>
+              {optionButton(() => setEditIndex(() => index), Pencil)}
 
-              <div className='clicableDiv' onClick={() => setEditIndex(() => index)}>
-                <Pencil className='sizeSVG' />
-              </div>
-
-              {(index !== 0 && index !== sliderArray.current.length - 1)
+              {(index > 0 && index < sliderArray.current.length - 1)
                 ?
-                <div className='clicableDiv' onClick={() => delSlider(index)}>
-                  <Trash className='sizeSVG' />
-                </div>
+                optionButton(() => delSlider(index), Trash)
                 :
-                <div>
-                </div>
-              }
+                <></>}
             </div>
           )}
-
         </div>
         {editIndex === index ? <ManageSliderComponents role='edit' roleFunction={editSlider} objArray={[...sliderArray.current]} closeEditFun={closeEditFun} index={index} /> : <></>}
       </div>
@@ -249,7 +243,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
         time: sliderArray.current.map((obj: any) => obj.time)
       }
       ,
-      panelIndex: iii.current
+      panelIndex: indexOfPanel.current
     })
 
   }
@@ -269,26 +263,23 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
         return false;
       }
     }
-
     reader.readAsText(file);
   }
 
-
   function addFun() {
     isCreatingNewSlider.current = true; setUpdate(() => 'yes');
-    return 0;
   }
 
   return (
-    <div key={sliderArray.current.length} style={{ height: sliderArray.current.length * 80 + 505 }} className='ChartJS'>
 
+    <div key={sliderArray.current.length} style={{ height: sliderArray.current.length * 70 + 580 }} className='ChartJS'>
       <div className='importExportButtons'>
-        <Button style={{ "width": "100px", "margin": "0px 10px 0px 10px" }} onClickFun={() => { saveConfig() }} text={"Save Config"} />
-        <Button style={{ "width": "100px", "text-decoration": "line-through" }}
-          /*upperCol={"rgb(15, 207, 255)"} underCol={"rgb(46, 110, 247)"}*/
+        <ButtonComp style={{ "width": "100px", "margin": "0px 10px 0px 10px" }} onClickFun={() => { saveConfig() }} text={"Save Config"} />
+        <ButtonComp style={{ "width": "100px", "textDecoration": "line-through" }}
           upperCol={"rgb(119, 119, 119)"}
           underCol={"rgb(75, 75, 75)"}
-          onClickFun={(event: any) => importJSON(event)}
+          onClickFun={() => {}}
+          //onClickFun={(event: any) => importJSON(event)}
           text={"Import Config"}
         />
       </div>
@@ -296,17 +287,16 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
       <Line data={data} options={options} />
 
       <div>
-        { returnSlider() }
+        {returnSlider()}
       </div>
 
       <div className='addContainer'>
-        {isCreatingNewSlider.current
-          ? addNewSlider(isCreatingNewSlider)
+        {isCreatingNewSlider.current ?
+          addNewSlider(isCreatingNewSlider)
           :
-          <Button svgPath={Add}
-            style={{ "max-width": "40px", "max-height": "40px", "margin": "0px 10px 0px 10px", "padding": "5px" }}
+          <ButtonComp svgPath={Add}
+            style={{ "maxWidth": "36px", "maxHeight": "36px", "margin": "0px 10px 0px 10px", "padding": "8px" }}
             onClickFun={() => addFun()}
-            text={"Save Config"}
           />
         }
       </div>

@@ -1,42 +1,62 @@
-.sliderPresentation {
-    padding-left: 3%;
-    display: grid;
-    grid-template-columns: 80px auto 80px; /* Adjusts the first column to 40px width */
-    align-items: center; /* Vertically aligns items in the center */
-    font-size: 14px;
-    height: 40px;
-}
-
-.valStyleAboveSlider
-{
-    background-color: #585858;
-    border-radius: 4px;
-    width: 25px;
-    height: 20px;
-}
-
 .ChartJS
 {
+    box-sizing: border-box;
     width: 910px;
     min-width: 900px;
     min-height: 700px;
     height: auto;
 }
+
+.containerSlider {
+    box-sizing: border-box;
+    min-height: 70px;
+    width: 1fr;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px 0px 10px 0px;
+    font-size: 14px;
+  }
+
+
 .valStyleAboveSliderContainer
 {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center; /* Aligns horizontally */
     align-items: center; /* Aligns vertically */
 }
 
-.containerSlider {
+.valStyleAboveSlider
+{
+    background-color: #313131;
+    border-radius: 2px;
+    width: 25px;
+    height: 20px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    height: auto;
-    min-height: 60px;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+}
+
+
+.sliderPresentation {
+    box-sizing: border-box;
+    padding-left: 30px;
+    display: grid;
+    grid-template-columns: 100px 1fr 80px; /* Adjusts the first column to 40px width */
+    align-items: center; /* Vertically aligns items in the center */
     font-size: 14px;
-  }
+    height: 40px;
+}
+
+.sliderPresentation_label {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; /* Vertically aligns items in the center */
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
 
 .optionPresentation
 {
@@ -47,15 +67,11 @@
     font-size: 14px;
 }
 
-.clicableDiv:hover
-{
-    cursor: pointer;
-}
-
 .clicableDiv
 {
     height: 20px;
     width: 20px; 
+    cursor: pointer;
 }
 
 .sizeSVG
@@ -63,21 +79,11 @@
     height: 20px;
     width: 20px; 
 }
+
 .addContainer
 {
     width: 100%;
-    display: flex;
-    justify-content: center; /* Aligns horizontally */
-    align-items: center; /* Aligns vertically */
-}
-.addButtonDiv
-{
-    width: 30px;
-    height: 30px;
-    background-color: #00b167;
-    border-radius: 3px;
-    box-shadow: 
-    3px 3px 0px hsl(155, 100%, 47%);
+    height: 50px;
     display: flex;
     justify-content: center; /* Aligns horizontally */
     align-items: center; /* Aligns vertically */
@@ -91,16 +97,9 @@
     font-size: 13px;
 }
 
-.addButtonDiv:hover
-{
-    box-shadow: 
-    1px 1px 0px rgb(0, 240, 140);
-}
-
 .exportFile
 {
     cursor: pointer;
-    background-color: #00b167;
     color: white;
     text-shadow: 2px 2px 2px rgba(0, 0, 0,0.5);
     display: inline-block;
@@ -108,15 +107,4 @@
     border: 0px;
     padding: 0px;
 }
-
-.importFile 
-{
-    display: none; /* Hide the actual file input */
-}
-
-.importlabel
-{
-    cursor:pointer;
-}
-
 
