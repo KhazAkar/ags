@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import MenuComp from "../MenuComponent/MenuComp";
+import NavigationComp from "../NavigationComponent/NavigationComp";
 import rootStyle from './RootStyle.module.css';
 
 export default function RootComp()
@@ -9,7 +9,7 @@ export default function RootComp()
         <div className={rootStyle.appWindow}>
             <div className={rootStyle.wrappingGrid}>
                 <div className={rootStyle.mainColumn}>
-                    <MenuComp/>
+                    <NavigationComp/>
                 </div>
                 
                 <div className={rootStyle.mainColumn}>

@@ -1,7 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import type { RouteObject } from 'react-router';
-import MenuComp from "../MenuComponent/MenuComp";
 import RootComp from "./RootComp";
 import ComandCenterComp from "../CCComponent/ComandCenterComp";
 import DevicesListComp from "../DevicesListComponent/DevicesListComp";
@@ -9,12 +8,6 @@ import AccountComp from "../AccountComponent/AccountComp";
 import ConfigComp from "../ConfigComponent/ConfigComp";
 import LoginComp from "../LoginComponent/LoginComp";
 import RegisterComp from '../RegisterComponent/RegisterComp'
-
-interface Route {
-    path: string;
-    element: React.Component;
-    children?: Object[];
-}
 
 let routingArray: RouteObject[] = [
     {path: '/', element: <LoginComp /> }, 

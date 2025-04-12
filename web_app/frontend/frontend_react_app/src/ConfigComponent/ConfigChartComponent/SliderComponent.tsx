@@ -4,8 +4,8 @@ import { ProfileContext } from '../ConfigContextComponent';
 import ButtonComp from '../../ButtonComponent/ButtonComp';
 import ManageSliderComponents from './ManageSliderComponents';
 import TooltipSlider from './TooltipSlider';
-import 'rc-slider/assets/index.css';
-import './SliderComponent.css';
+import 'rc-slider/assets/index.css'; //style for sliders
+import styleSlider from './SliderComponent.module.css';
 
 import {
   Chart as ChartJS,
@@ -170,8 +170,8 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
 
   function optionButton(fun: any, SVG: any) {
     return (
-      <div className='clicableDiv' onClick={() => fun()}>
-        <SVG className='sizeSVG' />
+      <div className={styleSlider.clicableDiv} onClick={() => fun()}>
+        <SVG className={styleSlider.sizeSVG} />
       </div>
     )
   }
@@ -180,17 +180,17 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
     return sliderArray.current.map((slider: any, index: number) => (
       <div
         key = {index+index}
-        className='containerSlider'
+        className={styleSlider.containerSlider}
         onMouseLeave={() => { setHoveredIndex(null); }} // Clear hover on leave
         onMouseEnter={() => { setHoveredIndex(index); }} // Set hovered index on enter
       >
-        <div className='valStyleAboveSliderContainer'>
-          <div className='valStyleAboveSlider'>
+        <div className={styleSlider.valStyleAboveSliderContainer}>
+          <div className={styleSlider.valStyleAboveSlider}>
             {slider.val}
           </div>
         </div>
 
-        <div className='sliderPresentation'>
+        <div className={styleSlider.sliderPresentation}>
           <div className="sliderPresentation_label">
             {slider.label}
           </div>
@@ -203,7 +203,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
           />
 
           {hoveredIndex === index && ( // Check if current index is hovered and if yes then print buttons with option and if index is > 0 and < n then also allow to delete
-            <div className='optionPresentation'>
+            <div className={styleSlider.optionPresentation}>
               {optionButton(() => setEditIndex(() => index), Pencil)}
 
               {(index > 0 && index < sliderArray.current.length - 1)
@@ -272,8 +272,8 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
 
   return (
 
-    <div key={sliderArray.current.length} style={{ height: sliderArray.current.length * 70 + 580 }} className='ChartJS'>
-      <div className='importExportButtons'>
+    <div key={sliderArray.current.length} style={{ height: sliderArray.current.length * 70 + 580 }} className={styleSlider.ChartJS}>
+      <div className={styleSlider.importExportButtons}>
         <ButtonComp style={{ "width": "100px", "margin": "0px 10px 0px 10px" }} onClickFun={() => { saveConfig() }} text={"Save Config"} />
         <ButtonComp style={{ "width": "100px", "textDecoration": "line-through" }}
           upperCol={"rgb(119, 119, 119)"}
@@ -290,7 +290,7 @@ export default function SliderComponent({ children, minY, maxY, startTime, endTi
         {returnSlider()}
       </div>
 
-      <div className='addContainer'>
+      <div className={styleSlider.addContainer}>
         {isCreatingNewSlider.current ?
           addNewSlider(isCreatingNewSlider)
           :

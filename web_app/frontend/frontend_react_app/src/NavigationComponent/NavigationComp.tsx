@@ -21,7 +21,7 @@ function MenuButton({ path, IconSVG }: {path: string, IconSVG: React.FC<React.SV
 
 }
 
-export default function MenuComp() {
+export default function NavigationComp() {
   return (
     <div className={menuStyle.container}>
       <div className={menuStyle.menuWrapperGrid}>
