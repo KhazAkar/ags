@@ -1,5 +1,6 @@
 import React from "react";
 import CCStyle from './ComandCenterStyle.module.css';
+import TimerComp from '../TimerComponent/TimerComp';
 
 function BasicDiv({ children }: { children: React.ReactNode }) {
     return (
@@ -46,8 +47,8 @@ export default function ComandCenterComp() {
                 {/* 1column  2rows */}
                 <div className={CCStyle.rightGrid}>
 
-                    <BasicDiv> </BasicDiv>
-
+                    <BasicDiv> <TimerComp/> </BasicDiv>
+                    
                     <BasicDiv> </BasicDiv>
 
                 </div>

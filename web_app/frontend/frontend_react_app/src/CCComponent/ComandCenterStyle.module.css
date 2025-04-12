@@ -1,6 +1,8 @@
 .CCContainer {
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
+    display: flex;
     padding: var(--gapVal) 5px var(--gapVal) 0px;
 }
 
@@ -12,9 +14,8 @@
     width: 100%;
     display: grid;
     
-
     color: #DDD5D0;
-    grid-template-columns: 25fr 5fr;
+    grid-template-columns: 25fr 6fr;
     grid-template-rows: 1fr;
 
     column-gap: var(--gapVal);
