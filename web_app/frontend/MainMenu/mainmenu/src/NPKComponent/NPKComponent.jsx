@@ -14,8 +14,8 @@ import './NPKComponentStyle.css';
 
 export default function NPKComponent({children, ...props})
 {
-    let {NPKJSON} = useContext(InitData);
-    let {totalPerCycle} = NPKJSON;
+    let {NPK} = useContext(InitData);
+    let {totalPerCycle} = NPK;
     let tensionRef = useRef(0.35);
 
     const configRef = useRef({

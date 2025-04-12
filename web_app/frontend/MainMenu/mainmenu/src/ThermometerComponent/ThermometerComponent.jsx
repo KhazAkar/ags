@@ -30,16 +30,16 @@ ChartJS.register(
   
 export default function ThermometerComponent({children, ...props})
 {
-    let {ThermometerJSON, labelPerProbeJSON} = useContext(InitData);
-    let {last30TempProbe} = ThermometerJSON;
+    let {Thermometer, labelPerProbe} = useContext(InitData);
+    let {last30TempProbe} = Thermometer;
 
     const configRef = useRef({
         options: { 
     
             scales: {
                 x: {
-                    min: Math.max(0, labelPerProbeJSON.length - 12), // Start from the last 14 columns
-                    max: labelPerProbeJSON.length, // End at the last column
+                    min: Math.max(0, labelPerProbe.length - 12), // Start from the last 14 columns
+                    max: labelPerProbe.length, // End at the last column
                     ticks: {
                         display: false, // Hides the x-axis labels
                     }
@@ -85,7 +85,7 @@ export default function ThermometerComponent({children, ...props})
     
           data: {
         
-            labels: labelPerProbeJSON,
+            labels: labelPerProbe,
             datasets: [
               {
                 label: 'RequestedTemp',
@@ -98,7 +98,7 @@ export default function ThermometerComponent({children, ...props})
               },
               {
                 label: 'CurrentTemp',
-                data: labelPerProbeJSON.map(() => getRandomInt(Math.max(...last30TempProbe))),
+                data: labelPerProbe.map(() => getRandomInt(Math.max(...last30TempProbe))),
                 borderColor: 'rgb(53, 235, 144)',
                 backgroundColor: 'rgba(53, 235, 62, 0.5)',
                 fill: false,
