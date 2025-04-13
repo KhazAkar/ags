@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2" pages="4">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4" pages="5">
   <diagram name="OverallView" id="iMTkxeB2DGwpaGkPtLTU">
     <mxGraphModel dx="1420" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -280,6 +280,9 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="R2RZIZFhC3APE5sBShbt-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-1" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-1" value="Serial interface" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="550" y="130" width="120" height="30" as="geometry" />
         </mxCell>
@@ -289,6 +292,24 @@
         <mxCell id="HBIGmiQNNAohoxz20zif-5" value="MQTT Broker" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="10" y="50" width="120" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="R2RZIZFhC3APE5sBShbt-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HBIGmiQNNAohoxz20zif-17" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HBIGmiQNNAohoxz20zif-17" value="Platform Handler" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="R2RZIZFhC3APE5sBShbt-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="HBIGmiQNNAohoxz20zif-19" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="40" />
+              <mxPoint x="290" y="40" />
+              <mxPoint x="290" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HBIGmiQNNAohoxz20zif-19" value="Simple&lt;div&gt;local&lt;/div&gt;&lt;div&gt;frontend&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="570" y="140" width="80" height="80" as="geometry" />
+        </mxCell>
         <mxCell id="HBIGmiQNNAohoxz20zif-21" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Serial interface&lt;/h1&gt;&lt;p&gt;This module would be responsible for communication with fertilizers measurement sensor&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="40" y="400" width="180" height="120" as="geometry" />
         </mxCell>
@@ -296,6 +317,9 @@
           <mxGeometry x="230" y="405" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="R2RZIZFhC3APE5sBShbt-1" target="R2RZIZFhC3APE5sBShbt-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R2RZIZFhC3APE5sBShbt-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="R2RZIZFhC3APE5sBShbt-1" target="R2RZIZFhC3APE5sBShbt-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-1" value="ADC" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -327,6 +351,9 @@
             <mxPoint x="110" y="350" as="sourcePoint" />
             <mxPoint x="210" y="250" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="R2RZIZFhC3APE5sBShbt-24" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local frontend&lt;/h1&gt;&lt;p&gt;Very simple, vanilla frontend which will show current measurements, refreshing every few seconds + graph.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="300" y="600" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="R2RZIZFhC3APE5sBShbt-25" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Message router &amp;amp; exchange&lt;/h1&gt;&lt;p&gt;Router is responsible for passing relevant information between further modules, and message exchange is responsible for communication with MQTT broker&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="440" y="515" width="180" height="170" as="geometry" />
