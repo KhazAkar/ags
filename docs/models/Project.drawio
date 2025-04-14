@@ -497,16 +497,13 @@
         <mxCell id="o6frkzAilKftnNJYonbC-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;shadow=0;startArrow=none;startFill=0;" parent="1" source="5t0Jxkd8qIaR6l1DoWF1-9" target="5t0Jxkd8qIaR6l1DoWF1-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SrurF0DP6uyuYHbQSbKY-1" value="(POST) /device/notes" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="SrurF0DP6uyuYHbQSbKY-1" value="(GET/POST) /device/notes" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="630" y="310" width="280" height="60" as="geometry" />
         </mxCell>
         <mxCell id="SrurF0DP6uyuYHbQSbKY-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.4;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="SrurF0DP6uyuYHbQSbKY-1" target="5t0Jxkd8qIaR6l1DoWF1-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="edZWyuSeFYSw8CsTxuZQ-2" value="For what purpose???" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="680" y="280" width="140" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="edZWyuSeFYSw8CsTxuZQ-3" value="Get data / create / update" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="edZWyuSeFYSw8CsTxuZQ-3" value="Get data / create / update" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="700" y="700" width="150" height="30" as="geometry" />
         </mxCell>
       </root>
