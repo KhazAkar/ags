@@ -36,8 +36,7 @@ export default function TimerComp()
 
     function divYYYYMMDD()
     {   
-        let howManyDays:number = Math.floor(subData.getMilliseconds() / millisecondsInDay.current)
-
+        let howManyDays:number = Math.floor(subData.getTime()/ millisecondsInDay.current)
         return(
             <div>
                 {`${howManyDays} Days`}

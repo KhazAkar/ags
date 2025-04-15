@@ -1,6 +1,7 @@
 import React from "react";
 import CCStyle from './ComandCenterStyle.module.css';
 import TimerComp from '../TimerComponent/TimerComp';
+import NoteModule from '../NoteComponent/NoteModule';
 
 function BasicDiv({ children }: { children: React.ReactNode }) {
     return (
@@ -49,7 +50,7 @@ export default function ComandCenterComp() {
 
                     <BasicDiv> <TimerComp/> </BasicDiv>
                     
-                    <BasicDiv> </BasicDiv>
+                    <BasicDiv> <NoteModule/> </BasicDiv>
 
                 </div>
             </div>
