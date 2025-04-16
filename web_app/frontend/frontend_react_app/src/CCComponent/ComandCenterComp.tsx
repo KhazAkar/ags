@@ -4,14 +4,12 @@ import TimerComp from '../TimerComponent/TimerComp';
 import NoteModule from '../NoteComponent/NoteModule';
 import { LineChartComp, MinimalistLineChartComp } from '../ChartComponent/LineChartComp';
 
-
-
-let labelsArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+let labelsArr = ['05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13', '05.04T13.12.13']
 
 let dataSetArr = [{
     label: 'Aloha',
     data: [10, 20, 30, 10, 20, 30, 10, 20, 30, 40, 60, 50],
-    borderColor: 'rgba(75,192,192,1)',
+    borderColor: 'rgb(0, 250, 0)',
     fill: false,
     stepped: true
 }]
@@ -46,6 +44,14 @@ function SpanModDiv({ children }: { children: React.ReactNode }) {
 }
 
 export default function ComandCenterComp() {
+
+
+
+
+
+
+
+
     return (
         <div className={CCStyle.CCContainer}>
             <div className={CCStyle.gridWrapper}>
@@ -53,17 +59,17 @@ export default function ComandCenterComp() {
                 {/* 3columns  4rows */}
                 <div className={CCStyle.centerGrid}>
 
-                    <BasicDiv> <LineChartComp minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> TEMP </BasicDiv>
+                    <BasicDiv> <LineChartComp /*TEMP*/ minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/>  </BasicDiv> 
 
-                    <BasicDiv> <LineChartComp minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> SOIL HUMI/AIR HUMID</BasicDiv>
+                    <BasicDiv> <LineChartComp /*SOIL HUMI/AIR HUMID*/ minY={0} maxY={100} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> </BasicDiv>
 
-                    <BasicDiv> <LineChartComp minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={doubleDataSetArr} howMany={5}/> NPK </BasicDiv>
+                    <BasicDiv> <LineChartComp /*NPK*/ minY={0} maxY={1000} labelsArr={labelsArr} dataSetArr={doubleDataSetArr} howMany={5}/>  </BasicDiv>
 
-                    <SpanModDiv> <MinimalistLineChartComp minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> WATER LVL</SpanModDiv>
+                    <SpanModDiv> <MinimalistLineChartComp /*WATER LVL*/minY={0} maxY={50} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> </SpanModDiv>
 
-                    <SpanModDiv> <MinimalistLineChartComp minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> AIR FLOW </SpanModDiv>
+                    <SpanModDiv> <MinimalistLineChartComp /*AIR FLOW*/minY={0} maxY={100} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/>  </SpanModDiv>
 
-                    <SpanModDiv>  <MinimalistLineChartComp minY={0} maxY={60} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/> POWER CONSUMPTION </SpanModDiv>
+                    <SpanModDiv>  <MinimalistLineChartComp /*POWER CONSUMPTION*/ minY={0} maxY={50} labelsArr={labelsArr} dataSetArr={dataSetArr} howMany={5}/>  </SpanModDiv>
 
                     <div className={` ${CCStyle.basicStyle} ${CCStyle.contentCam}`}>
 

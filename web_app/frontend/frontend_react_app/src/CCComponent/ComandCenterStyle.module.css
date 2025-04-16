@@ -57,7 +57,7 @@
     border-width: var(--var-border-width);
     border-style: var(--var-border-style);
     border-color: var(--var-border-color);
-    overflow: auto;
+    overflow: hidden;
 }
 
 .content2 {

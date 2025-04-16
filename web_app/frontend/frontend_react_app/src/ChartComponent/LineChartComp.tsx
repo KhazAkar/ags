@@ -38,10 +38,12 @@ interface lineChartArgs {
     howMany?: any
 }
 
-export function LineChartComp({children, labelsArr, dataSetArr, dataSetLabelArr, borderColorArr, backGroundColorArr, minY, maxY, howMany}:lineChartArgs) {
+export function LineChartComp({children, labelsArr, dataSetArr, minY, maxY, howMany}:lineChartArgs) {
 
     const chartOptions = {
         responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 1.2, // Width / Height ratio, e.g. 1.5 = 3:2
         color: 'rgb(230, 230, 230)',
         plugins: {
           legend: {
@@ -107,10 +109,11 @@ export function LineChartComp({children, labelsArr, dataSetArr, dataSetLabelArr,
     );
 }
 
-export function MinimalistLineChartComp({children, labelsArr, dataSetArr, dataSetLabelArr, borderColorArr, backGroundColorArr, minY, maxY, howMany}:lineChartArgs) {
+export function MinimalistLineChartComp({children, labelsArr, dataSetArr, minY, maxY, howMany}:lineChartArgs) {
 
     const chartOptions = {
         responsive: true,
+        maintainAspectRatio: false, // allow full height flexibility
         color: 'rgb(230, 230, 230)',
         plugins: {
           legend: {
@@ -173,7 +176,7 @@ export function MinimalistLineChartComp({children, labelsArr, dataSetArr, dataSe
 
     return (
         <div className={style.chartContainer}>
-            <Chart className={`${style.chartWindow} ${style.minimalistChartWindow} `} type="line" data={data} options={chartOptions} />
+            <Chart className={`${style.minimalistChartWindow} `} type="line" data={data} options={chartOptions} />
         </div>
     );
 }
