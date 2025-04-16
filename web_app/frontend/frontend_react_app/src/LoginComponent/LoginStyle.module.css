@@ -51,7 +51,7 @@
     min-height: 500px;
     height: 500px;
 
-    border-radius: 5px;
+    border-radius: var(--var-border-radius);
     background-color: rgba(39, 39, 39,0.9); /*#4C4E5D*/
     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     align-items: center;

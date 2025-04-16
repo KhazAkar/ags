@@ -1,7 +1,7 @@
 .CCContainer {
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     display: flex;
     padding: var(--gapVal) 5px var(--gapVal) 0px;
 }
@@ -9,9 +9,9 @@
 
 .gridWrapper {
     box-sizing: border-box;
-
     height: 100%;
     width: 100%;
+    max-height: 100%;
     display: grid;
     
     color: #DDD5D0;
@@ -25,6 +25,7 @@
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    max-height: 100%;
     display: grid;
 
     grid-template-columns: 1fr 1fr 1fr;
@@ -51,15 +52,18 @@
 {
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     border-radius: var(--var-border-radius);
     border-width: var(--var-border-width);
     border-style: var(--var-border-style);
     border-color: var(--var-border-color);
+    overflow: auto;
 }
 
 .content2 {
     grid-column: 1 / 2;
+    width: 100%;
+    aspect-ratio: 323 / 100;
 }
 
 .contentCam {
