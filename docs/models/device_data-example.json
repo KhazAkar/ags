@@ -1,0 +1,30 @@
+{
+  "devices": [
+    {
+      "id": "device1",
+      "location": "Greenhouse",
+      "status": "active",
+      "errors": [
+        {
+          "code": "DEVICE_NOT_RESPONDING",
+          "timestamp": "2023-04-01T12:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "device2",
+      "location": "Greenhouse",
+      "status": "active",
+      "errors": [
+        {
+          "code": "DEVICE_NOT_RESPONDING",
+          "timestamp": "2023-04-01T12:00:00Z"
+        },
+        {
+          "code": "LOW_BATTERY",
+          "timestamp": "2023-04-01T12:00:00Z"
+        }
+      ]
+    }
+  ]
+}
