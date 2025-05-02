@@ -4,17 +4,94 @@
       "id": "device1",
       "location": "Greenhouse",
       "status": "active",
+      "measurements": [
+        {
+          "type": "temperature",
+          "value": 25.5
+        },
+        {
+          "type": "humidity",
+          "value": 60.2
+        },
+        {
+          "type": "light",
+          "value": 500
+        },
+        {
+          "type": "soil_moisture",
+          "value": 30
+        },
+        {
+          "type": "air_quality",
+          "value": 50
+        },
+        {
+          "type": "water_level",
+          "value": 70
+        },
+        {
+          "type": "ph_level",
+          "value": 6.5
+        },
+        {
+          "type": "npk",
+          "value": {
+            "nitrogen": 10,
+            "phosphorus": 5,
+            "potassium": 20
+          }
+        }
+      ],
       "errors": [
         {
           "code": "DEVICE_NOT_RESPONDING",
           "timestamp": "2023-04-01T12:00:00Z"
         }
-      ]
+      ],
+      "timestamp": "2023-04-01T12:00:00Z"
     },
     {
       "id": "device2",
       "location": "Greenhouse",
       "status": "active",
+      "measurements": [
+        {
+          "type": "temperature",
+          "value": 25.5
+        },
+        {
+          "type": "humidity",
+          "value": 60.2
+        },
+        {
+          "type": "light",
+          "value": 500
+        },
+        {
+          "type": "soil_moisture",
+          "value": 30
+        },
+        {
+          "type": "air_quality",
+          "value": 50
+        },
+        {
+          "type": "water_level",
+          "value": 70
+        },
+        {
+          "type": "ph_level",
+          "value": 6.5
+        },
+        {
+          "type": "npk",
+          "value": {
+            "nitrogen": 10,
+            "phosphorus": 5,
+            "potassium": 20
+          }
+        }
+      ],
       "errors": [
         {
           "code": "DEVICE_NOT_RESPONDING",
@@ -24,7 +101,8 @@
           "code": "LOW_BATTERY",
           "timestamp": "2023-04-01T12:00:00Z"
         }
-      ]
+      ],
+      "timestamp": "2023-04-01T12:00:00Z"
     }
   ]
 }
