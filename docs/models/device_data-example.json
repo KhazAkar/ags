@@ -1,0 +1,60 @@
+{
+  "devices": [
+    {
+      "id": "device1",
+      "location": "Greenhouse",
+      "status": "active",
+      "measurements": {
+        "temperature": 25.5,
+        "humidity": 60.2,
+        "light": 500,
+        "soil_moisture": 30,
+        "air_quality": 50,
+        "water_level": 70,
+        "ph_level": 6.5,
+        "npk": {
+          "nitrogen": 10,
+          "phosphorus": 5,
+          "potassium": 20
+        }
+      },
+      "errors": [
+        {
+          "code": "E001",
+          "timestamp": "2023-04-01T12:00:00Z"
+        }
+      ],
+      "timestamp": "2023-04-01T12:00:00Z"
+    },
+    {
+      "id": "device2",
+      "location": "Greenhouse",
+      "status": "active",
+      "measurements": {
+        "temperature": 25.5,
+        "humidity": 60.2,
+        "light": 500,
+        "soil_moisture": 30,
+        "air_quality": 50,
+        "water_level": 70,
+        "ph_level": 6.5,
+        "npk": {
+          "nitrogen": 1,
+          "phosphorus": 50,
+          "potassium": 200
+        }
+      },
+      "errors": [
+        {
+          "code": "E001",
+          "timestamp": "2023-04-01T12:00:00Z"
+        },
+        {
+          "code": "E011",
+          "timestamp": "2023-04-01T12:00:00Z"
+        }
+      ],
+      "timestamp": "2023-04-01T12:00:00Z"
+    }
+  ]
+}
