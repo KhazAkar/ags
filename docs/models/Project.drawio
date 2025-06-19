@@ -401,15 +401,6 @@
         <mxCell id="M0Ps3pdEvH2lT0RtJjz2-4" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local data storage (SQLite)&lt;/h1&gt;&lt;p&gt;Acts as data holder, useful for local data backup and dataset for edge AI module&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="630" y="410" width="180" height="165" as="geometry" />
         </mxCell>
-        <mxCell id="v3ljemEIRhPSZxIx5FJs-1" value="Local web interface" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="10" y="160" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="v3ljemEIRhPSZxIx5FJs-2" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;width=16;startSize=5.33;" parent="1" source="v3ljemEIRhPSZxIx5FJs-1" target="R2RZIZFhC3APE5sBShbt-7" edge="1">
-          <mxGeometry width="100" height="100" relative="1" as="geometry">
-            <mxPoint x="120" y="152.5" as="sourcePoint" />
-            <mxPoint x="180" y="152.5" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="v3ljemEIRhPSZxIx5FJs-3" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Local web interface&lt;/h1&gt;&lt;div&gt;Simple interface for data stored in the system, with limited edit capabilities, like custom profiles (after being enabled) etc&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="630" y="585" width="180" height="165" as="geometry" />
         </mxCell>
