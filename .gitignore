@@ -27,3 +27,4 @@ node_modules
 .rar
 *backups
 *.bkp
+__pycache__
