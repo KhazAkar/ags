@@ -2,8 +2,28 @@ class ThemeToggle extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        this._darkMode = localStorage.getItem('darkMode') === 'true' || 
-                      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        // Determine initial theme – prefer saved user setting over system preference
+        const saved = localStorage.getItem('darkMode');
+        if (saved !== null) {
+            this._darkMode = saved === 'true';
+        } else {
+            this._darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+
+        // Apply the theme immediately to avoid flash of incorrect theme
+        document.documentElement.setAttribute('data-theme', this._darkMode ? 'dark' : 'light');
+
+        // If no saved preference, watch for OS-level preference changes
+        if (saved === null && window.matchMedia) {
+            this._mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            this._mediaQueryListener = (e) => {
+                this._darkMode = e.matches;
+                this.updateTheme();
+                // Inform listeners of the change
+                this.dispatchEvent(new CustomEvent('theme-change', { detail: { darkMode: this._darkMode }, bubbles: true, composed: true }));
+            };
+            this._mediaQuery.addEventListener('change', this._mediaQueryListener);
+        }
     }
 
     static get observedAttributes() {
@@ -22,7 +42,9 @@ class ThemeToggle extends HTMLElement {
         localStorage.setItem('darkMode', this._darkMode);
         this.updateTheme();
         this.dispatchEvent(new CustomEvent('theme-change', { 
-            detail: { darkMode: this._darkMode } 
+            detail: { darkMode: this._darkMode },
+            bubbles: true,
+            composed: true
         }));
     }
 
@@ -32,6 +54,22 @@ class ThemeToggle extends HTMLElement {
         this.toggleButton?.setAttribute('aria-label', 
             `${this._darkMode ? 'Switch to light' : 'Switch to dark'} mode`
         );
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'dark' && oldValue !== newValue) {
+            const newMode = newValue !== null && newValue !== 'false';
+            if (this._darkMode !== newMode) {
+                this._darkMode = newMode;
+                this.updateTheme();
+            }
+        }
+    }
+
+    disconnectedCallback() {
+        if (this._mediaQueryListener && this._mediaQuery) {
+            this._mediaQuery.removeEventListener('change', this._mediaQueryListener);
+        }
     }
 
     render() {

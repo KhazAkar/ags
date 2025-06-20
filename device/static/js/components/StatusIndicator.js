@@ -9,6 +9,10 @@ class StatusIndicator extends HTMLElement {
         this.status = 'idle';
         this.message = '';
         this.timestamp = new Date();
+        this._timer = setInterval(() => {
+            this.timestamp = new Date();
+            this.render();
+        }, 1000);
     }
 
     connectedCallback() {
@@ -18,6 +22,10 @@ class StatusIndicator extends HTMLElement {
     }
 
     disconnectedCallback() {
+        if (this._timer) {
+            clearInterval(this._timer);
+            this._timer = null;
+        }
         // Clean up event listener
         document.removeEventListener('theme-change', this.handleThemeChange);
     }
@@ -39,9 +47,9 @@ class StatusIndicator extends HTMLElement {
     getStatusIcon() {
         const icons = {
             idle: '⏳',
-            success: '✓',
-            error: '✕',
-            warning: '⚠',
+            success: '✅',
+            error: '❌',
+            warning: '⚠️',
             loading: '⏳'
         };
         return icons[this.status] || icons.idle;
@@ -59,7 +67,7 @@ class StatusIndicator extends HTMLElement {
     }
 
     formatTime(date) {
-        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     }
 
     render() {
@@ -108,7 +116,7 @@ class StatusIndicator extends HTMLElement {
                     width: 100%;
                 }
 
-                .status-dot {
+                /* .status-dot removed */
                     width: 8px;
                     height: 8px;
                     border-radius: 50%;
@@ -128,8 +136,8 @@ class StatusIndicator extends HTMLElement {
                 }
 
                 .status-time {
+                    font-size: 0.875rem;
                     color: var(--status-time);
-                    font-size: 0.75rem;
                     opacity: 0.9;
                     margin-top: 0.1rem;
                 }
@@ -137,7 +145,7 @@ class StatusIndicator extends HTMLElement {
 
             <div class="status-content">
                 <div class="status-row">
-                    <div class="status-dot"></div>
+                    
                     <span class="status-message">
                         <span class="status-icon">${icon}</span>
                         <span class="status-text">${this.message}</span>

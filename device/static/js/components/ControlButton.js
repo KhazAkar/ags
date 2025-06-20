@@ -10,13 +10,31 @@ class ControlButton extends HTMLElement {
         this._loading = false;
         this._originalText = '';
         this._clickHandler = this._handleClick.bind(this);
+        this._themeChangeHandler = () => this._handleThemeChange();
+        this._isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     }
 
     connectedCallback() {
+        // Re-evaluate theme in case it changed before the component was upgraded
+        this._isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         this._render();
-        this.shadowRoot.querySelector('button').addEventListener('click', this._clickHandler);
-        // Add theme change listener
-        document.addEventListener('theme-change', this._handleThemeChange = () => this._render());
+        const button = this.shadowRoot.querySelector('button');
+        if (button) {
+            button.addEventListener('click', this._clickHandler);
+        }
+        document.addEventListener('theme-change', this._themeChangeHandler);
+        // Add observer for data-theme attribute changes
+        this._observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'data-theme') {
+                    this._handleThemeChange();
+                }
+            });
+        });
+        this._observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-theme']
+        });
     }
 
     disconnectedCallback() {
@@ -24,8 +42,11 @@ class ControlButton extends HTMLElement {
         if (button) {
             button.removeEventListener('click', this._clickHandler);
         }
-        // Remove theme change listener
-        document.removeEventListener('theme-change', this._handleThemeChange);
+        // Clean up event listeners and observer
+        document.removeEventListener('theme-change', this._themeChangeHandler);
+        if (this._observer) {
+            this._observer.disconnect();
+        }
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -55,8 +76,30 @@ class ControlButton extends HTMLElement {
         this._render();
     }
 
+    _handleThemeChange() {
+        const newIsDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (this._isDark !== newIsDark) {
+            this._isDark = newIsDark;
+            this._render();
+        }
+    }
+
+    _getThemeStyles() {
+        return `
+            :host {
+                --button-bg: ${this._isDark ? 'rgba(55, 65, 81, 0.8)' : '#f3f4f6'};
+                --button-hover: ${this._isDark ? 'rgba(75, 85, 99, 0.9)' : '#e5e7eb'};
+                --button-text: ${this._isDark ? '#f3f4f6' : '#1f2937'};
+                --button-border: ${this._isDark ? 'rgba(75, 85, 99, 0.5)' : 'rgba(0, 0, 0, 0.1)'};
+                --button-shadow: ${this._isDark ? '0 2px 4px rgba(0, 0, 0, 0.2)' : '0 1px 2px 0 rgba(0, 0, 0, 0.05)'};
+                --button-disabled: ${this._isDark ? 'rgba(75, 85, 99, 0.5)' : 'rgba(156, 163, 175, 0.5)'};
+                --button-disabled-text: ${this._isDark ? 'rgba(156, 163, 175, 0.7)' : 'rgba(107, 114, 128, 0.7)'};
+                --button-focus-ring: ${this._isDark ? 'rgba(16, 185, 129, 0.5)' : 'rgba(16, 185, 129, 0.3)'};
+            }
+        `;
+    }
+
     _render() {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         const button = document.createElement('button');
         button.disabled = this._loading;
         button.className = `control-button ${this._active ? 'active' : ''} ${this._loading ? 'loading' : ''}`;
@@ -66,17 +109,12 @@ class ControlButton extends HTMLElement {
         
         button.innerHTML = `
             <style>
+                ${this._getThemeStyles()}
+                
                 .control-button {
-                    --button-bg: ${isDark ? 'rgba(55, 65, 81, 0.8)' : '#f3f4f6'};
-                    --button-hover: ${isDark ? 'rgba(75, 85, 99, 0.9)' : '#e5e7eb'};
-                    --button-text: ${isDark ? '#f3f4f6' : '#1f2937'};
-                    --button-border: ${isDark ? 'rgba(75, 85, 99, 0.5)' : 'rgba(0, 0, 0, 0.1)'};
-                    --button-shadow: ${isDark ? '0 2px 4px rgba(0, 0, 0, 0.2)' : '0 1px 2px 0 rgba(0, 0, 0, 0.05)'};
                     --button-active-bg: var(--primary);
                     --button-active-hover: var(--primary-dark);
                     --button-active-text: white;
-                    --button-disabled: ${isDark ? 'rgba(75, 85, 99, 0.5)' : 'rgba(156, 163, 175, 0.5)'};
-                    --button-disabled-text: ${isDark ? 'rgba(156, 163, 175, 0.7)' : 'rgba(107, 114, 128, 0.7)'};
                     
                     display: inline-flex;
                     align-items: center;
@@ -107,7 +145,7 @@ class ControlButton extends HTMLElement {
 
                 .control-button:focus {
                     outline: none;
-                    box-shadow: 0 0 0 3px ${isDark ? 'rgba(16, 185, 129, 0.5)' : 'rgba(16, 185, 129, 0.3)'};
+                    box-shadow: 0 0 0 3px var(--button-focus-ring);
                 }
 
                 .control-button:disabled {
@@ -138,10 +176,11 @@ class ControlButton extends HTMLElement {
                     position: absolute;
                     width: 1.25rem;
                     height: 1.25rem;
-                    border: 2px solid ${isDark ? 'rgba(243, 244, 246, 0.5)' : 'rgba(156, 163, 175, 0.5)'};
+                    border: 2px solid var(--button-text);
                     border-top-color: transparent;
                     border-radius: 50%;
                     animation: spin 1s linear infinite;
+                    opacity: 0.5;
                 }
 
                 .control-button.active.loading::after {
@@ -166,11 +205,10 @@ class ControlButton extends HTMLElement {
             <span class="text">${text}</span>
         `;
 
-        // Only replace the content if it's different to avoid infinite loops
-        if (!this.shadowRoot.innerHTML || this.shadowRoot.innerHTML !== button.outerHTML) {
-            this.shadowRoot.innerHTML = '';
-            this.shadowRoot.appendChild(button);
-        }
+        // Replace shadow content and ensure click handler attached
+        this.shadowRoot.innerHTML = '';
+        this.shadowRoot.appendChild(button);
+        button.addEventListener('click', this._clickHandler);
     }
 }
 

@@ -74,7 +74,7 @@ class SensorCard extends HTMLElement {
                     display: block;
                     background: var(--card-bg);
                     border-radius: 16px;
-                    padding: 1.5rem;
+                    padding: 1.5rem 2rem;
                     box-shadow: var(--card-shadow);
                     backdrop-filter: blur(10px);
                     -webkit-backdrop-filter: blur(10px);
