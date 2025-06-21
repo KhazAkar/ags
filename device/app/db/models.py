@@ -16,7 +16,7 @@ class SensorReading(Base):
     sensor_id = Column(String, index=True)    # Unique identifier for the sensor
     value = Column(Float)                     # The actual reading
     unit = Column(String)                     # Unit of measurement
-    timestamp = Column(DateTime, default=datetime.utcnow)
+    timestamp = Column(DateTime, default=datetime.now(datetime.timezone.utc))
     metadata = Column(JSON, nullable=True)    # Additional sensor metadata
 
 class DeviceState(Base):
