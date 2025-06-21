@@ -3,11 +3,13 @@ MQTT client for communication with the MQTT broker.
 """
 import json
 import logging
-import paho.mqtt.client as mqtt
-from typing import Callable, Any
 from dataclasses import dataclass
+from typing import Any, Callable
+
+import paho.mqtt.client as mqtt
+
 from ..config.settings import MQTT_BROKER, MQTT_PORT, MQTT_TOPIC_PREFIX
-from ..core.message_router import Message, MessageType, MessageRouter
+from ..core.message_router import Message, MessageRouter, MessageType
 
 logger = logging.getLogger(__name__)
 
