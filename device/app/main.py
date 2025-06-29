@@ -2,15 +2,23 @@
 from __future__ import annotations
 
 import argparse
+import logging
+import sys
 from pathlib import Path
 
 import uvicorn
 
 from . import create_app
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    stream=sys.stdout
+)
+
 # Default location of the frontend relative to this file.
 STATIC_DIR = Path(__file__).resolve().parent.parent / "static"
-
 
 def build_parser() -> argparse.ArgumentParser:  # noqa: D401
     """Create CLI argument parser."""
@@ -26,8 +34,18 @@ def build_parser() -> argparse.ArgumentParser:  # noqa: D401
 def main() -> None:  # noqa: D401
     """Run Uvicorn ASGI server."""
     args = build_parser().parse_args()
+    logger = logging.getLogger(__name__)
 
-    app = create_app(static_dir=STATIC_DIR)
+    # Resolve and verify static directory
+    static_dir = STATIC_DIR.resolve()
+    if not static_dir.exists():
+        logger.warning("Static directory not found at: %s", static_dir)
+        static_dir = None
+    else:
+        logger.info("Serving static files from: %s", static_dir)
+
+    app = create_app(static_dir=static_dir)
+    logger.info("Starting server on %s:%s", args.host, args.port)
     uvicorn.run(app, host=args.host, port=args.port, factory=False)
 
 

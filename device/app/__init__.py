@@ -32,7 +32,7 @@ def create_app(static_dir: Path | None = None) -> falcon.App:  # noqa: D401
         exposed under the root ("/") so that the SPA can be loaded directly
         from the backend.
     """
-    app = falcon.asgi.App()
+    app = falcon.App()
     app.add_route("/health", HealthResource())
 
     if static_dir is not None:
