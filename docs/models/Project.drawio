@@ -497,48 +497,115 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="t6amJUUXvrV6SM2OaOX--12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tKH34Ndddux4VBxR1bz4-1" target="t6amJUUXvrV6SM2OaOX--10">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="tKH34Ndddux4VBxR1bz4-1" target="t6amJUUXvrV6SM2OaOX--10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="tKH34Ndddux4VBxR1bz4-1" value="Server" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="640" y="360" width="120" height="80" as="geometry" />
+        <mxCell id="tKH34Ndddux4VBxR1bz4-1" value="Server" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="110" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="t6amJUUXvrV6SM2OaOX--1" target="t6amJUUXvrV6SM2OaOX--2">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" parent="1" source="t6amJUUXvrV6SM2OaOX--1" target="t6amJUUXvrV6SM2OaOX--2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--4" value="UART" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="t6amJUUXvrV6SM2OaOX--3">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--4" value="UART" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="t6amJUUXvrV6SM2OaOX--3" vertex="1" connectable="0">
           <mxGeometry x="-0.1667" y="-2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="t6amJUUXvrV6SM2OaOX--1" target="t6amJUUXvrV6SM2OaOX--7">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" parent="1" source="t6amJUUXvrV6SM2OaOX--1" target="t6amJUUXvrV6SM2OaOX--7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--1" value="Arduino" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="310" y="525" width="80" height="60" as="geometry" />
+        <mxCell id="t6amJUUXvrV6SM2OaOX--1" value="Arduino" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="310" y="275" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--2" value="SBC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="525" width="120" height="60" as="geometry" />
+        <mxCell id="t6amJUUXvrV6SM2OaOX--2" value="SBC" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="275" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="t6amJUUXvrV6SM2OaOX--2" target="tKH34Ndddux4VBxR1bz4-1">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="t6amJUUXvrV6SM2OaOX--2" target="tKH34Ndddux4VBxR1bz4-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--6" value="HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="t6amJUUXvrV6SM2OaOX--5">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--6" value="HTTP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="t6amJUUXvrV6SM2OaOX--5" vertex="1" connectable="0">
           <mxGeometry x="0.097" y="2" relative="1" as="geometry">
             <mxPoint y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--7" value="Sensors&lt;div&gt;- Soil moisture&lt;/div&gt;&lt;div&gt;- Soil temperature&lt;/div&gt;&lt;div&gt;- Air temp + humidity&lt;/div&gt;&lt;div&gt;- Photoresistor / Digital light meter&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Actuators:&lt;/div&gt;&lt;div&gt;- Water on/off&lt;/div&gt;&lt;div&gt;- Light on/off&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="50" y="405" width="180" height="300" as="geometry" />
+        <mxCell id="t6amJUUXvrV6SM2OaOX--7" value="Sensors&lt;div&gt;- Soil moisture&lt;/div&gt;&lt;div&gt;- Soil temperature&lt;/div&gt;&lt;div&gt;- Air temp + humidity&lt;/div&gt;&lt;div&gt;- Photoresistor / Digital light meter&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Actuators:&lt;/div&gt;&lt;div&gt;- Water on/off&lt;/div&gt;&lt;div&gt;- Light on/off&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="155" width="180" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--9" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="330" y="345" width="30" height="60" as="geometry" />
+        <mxCell id="t6amJUUXvrV6SM2OaOX--9" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="330" y="95" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--10" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="410" y="320" width="120" height="160" as="geometry" />
+        <mxCell id="t6amJUUXvrV6SM2OaOX--10" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="70" width="120" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="t6amJUUXvrV6SM2OaOX--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.008;entryY=0.431;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="t6amJUUXvrV6SM2OaOX--9" target="t6amJUUXvrV6SM2OaOX--10">
+        <mxCell id="t6amJUUXvrV6SM2OaOX--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.008;entryY=0.431;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="t6amJUUXvrV6SM2OaOX--9" target="t6amJUUXvrV6SM2OaOX--10" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-1" value="- API Server&lt;div&gt;- SQLite DB to save Data&lt;/div&gt;&lt;div&gt;- Dashboard for data visualization&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="645" y="40" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-2" value="- Communicates with Arduino via UART, collects data&lt;div&gt;- Sends it via HTTP&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T4xR2ks7-CHhrIBnVc7F-5" target="T4xR2ks7-CHhrIBnVc7F-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-5" value="Server" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="660" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="T4xR2ks7-CHhrIBnVc7F-9" target="T4xR2ks7-CHhrIBnVc7F-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-7" value="UART" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="T4xR2ks7-CHhrIBnVc7F-6">
+          <mxGeometry x="-0.1667" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="T4xR2ks7-CHhrIBnVc7F-9" target="T4xR2ks7-CHhrIBnVc7F-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-9" value="Arduino" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="825" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-10" value="SBC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="825" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="T4xR2ks7-CHhrIBnVc7F-10" target="T4xR2ks7-CHhrIBnVc7F-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-12" value="MQTT" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="T4xR2ks7-CHhrIBnVc7F-11">
+          <mxGeometry x="0.097" y="2" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-13" value="Sensors&lt;div&gt;- Soil moisture&lt;/div&gt;&lt;div&gt;- Soil temperature&lt;/div&gt;&lt;div&gt;- Air temp + humidity&lt;/div&gt;&lt;div&gt;- Photoresistor / Digital light meter&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Actuators:&lt;/div&gt;&lt;div&gt;- Water on/off&lt;/div&gt;&lt;div&gt;- Light on/off&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="705" width="180" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-14" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="645" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-15" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="620" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.008;entryY=0.431;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="T4xR2ks7-CHhrIBnVc7F-14" target="T4xR2ks7-CHhrIBnVc7F-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-17" value="- API Server&lt;div&gt;- MQTT Broker&lt;/div&gt;&lt;div&gt;- MQTT -&amp;gt; API (function app?)&lt;br&gt;&lt;div&gt;- SQLite DB to save Data&lt;/div&gt;&lt;div&gt;- Dashboard for data visualization&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="635" y="530" width="115" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-18" value="- Communicates with Arduino via UART, collects data&lt;div&gt;- Sends it via MQTT&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="910" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-19" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="520" as="sourcePoint" />
+            <mxPoint x="820" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-20" value="MQTT version" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="530" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T4xR2ks7-CHhrIBnVc7F-21" value="HTTP version" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="30" width="100" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
