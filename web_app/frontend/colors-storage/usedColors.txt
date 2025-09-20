@@ -1,8 +1,0 @@
-NPKComponent:       borderColor:'rgb(15, 207, 255)',
-                    backgroundColor: 'rgb(33, 82, 187)',
-
-                    borderColor: 'rgb(56, 255, 82)',
-                    backgroundColor: 'rgb(40, 172, 47)',
-
-                    borderColor: 'rgb(255, 184, 53)',
-                    backgroundColor: 'rgb(224, 143, 21)',
