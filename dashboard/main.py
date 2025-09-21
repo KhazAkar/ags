@@ -7,8 +7,8 @@ from bokeh.embed import components
 # Initialize Jinja2
 env = Environment(loader=FileSystemLoader('templates'))
 
-def load_data() -> str:
-    data = ""
+def load_data() -> list[str]:
+    data = []
     with sqlite3.connect("data.db") as conn:
         cursor = conn.execute('SELECT x, y FROM measurements')
         data = cursor.fetchall()
