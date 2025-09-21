@@ -10,7 +10,7 @@ import (
 )
 
 const BUF_SIZE = 250
-const SERVER = "http://wyse5070.local:9999"
+const SERVER = "http://wyse5070.local:9999/ingest"
 
 func main() {
 	port := setUARTComms("/dev/ttyAML6")
