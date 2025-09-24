@@ -30,3 +30,4 @@ node_modules
 
 device/deviceDataLogger
 device/device
+data.db
