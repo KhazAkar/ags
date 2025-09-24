@@ -7,12 +7,13 @@ import falcon.asgi
 import pandas as pd
 import uvicorn
 from bokeh.embed import components
-from bokeh.layouts import column
+from bokeh.layouts import row
 from bokeh.plotting import figure
 from jinja2 import Environment, FileSystemLoader
 
 # Initialize Jinja2
 env = Environment(loader=FileSystemLoader('templates'))
+env.filters['zip'] = zip
 
 def load_data() -> pd.DataFrame:
     data = None
@@ -51,53 +52,69 @@ def insert_data(data_line: str) -> bool:
 
 class PlotResource:
     async def on_get(self, req, resp):
-        data = load_data()
-        # Create bokeh plot to display
-        sensors = {
-            'pressure': 'Air Pressure (hPa)',
-            'light_intensity': 'Light Intensity (%)',
-            'soil_temp': 'Soil Temperature (°C)',
-            'soil_moisture': 'Soil Moisture (%)',
-            'air_temp': 'Air Temperature (°C)',
-            'air_humidity': 'Air Humidity (%)',
-        }
+        try:
+            data = load_data()
+            # Create bokeh plot to display
+            sensors = {
+                'air_pressure': 'Air Pressure (hPa)',
+                'light_intensity': 'Light Intensity (%)',
+                'soil_temp': 'Soil Temperature (°C)',
+                'soil_moisture': 'Soil Moisture (%)',
+                'air_temp': 'Air Temperature (°C)',
+                'air_humidity': 'Air Humidity (%)',
+            }
 
-        plots = []
-        for key, label in sensors.items():
-            p = figure(
-                title=label,
-                x_axis_type='datetime',
-                width=600,
-                height=300,
-                sizing_mode='scale_width'
-            )
-            p.line(data['timestamp'], data[key], line_width=2, color='green')
-            p.circle(data['timestamp'], data[key], size=4, color='black', alpha=0.5)
-            p.xaxis.axis_label = 'Time'
-            p.yaxis.axis_label = label
-            plots.append(p)
+            plots = []
+            for key, label in sensors.items():
+                p = figure(
+                    title=label,
+                    x_axis_type='datetime',
+                    width=1000,
+                    height=500,
+                    sizing_mode='scale_both',
+                    tools="pan,wheel_zoom,box_zoom,reset,save",
+                    active_drag="pan",
+                    active_scroll="wheel_zoom"
+                )
+                p.line(pd.to_datetime(data['timestamp']), data[key].to_numpy(), line_width=20, color='green', alpha=0.8)
+                p.scatter(pd.to_datetime(data['timestamp']), data[key], size=6, color='navy', alpha=0.6)
+                p.xaxis.axis_label = 'Time'
+                p.yaxis.axis_label = label
+                plots.append(p)
+            # layout = gridplot(grid)
+            layout = row(*plots)
+            # Generate separate div and script pairs for each plot
+            bokeh_divs = []
+            bokeh_scripts = []
+            for plot in plots:
+                script, div = components(plot)
+                bokeh_scripts.append(script)
+                bokeh_divs.append(div)
 
-        # Extract script & div components
-        layout = column(*plots)
-        script, div = components(layout)
+            tmpl = env.get_template('index.html')
+            html = tmpl.render(bokeh_scripts=bokeh_scripts, bokeh_divs=bokeh_divs)
 
-        tmpl = env.get_template('index.html')
-        html = tmpl.render(bokeh_script=script, bokeh_div=div)
-
-        resp.content_type = falcon.MEDIA_HTML
-        resp.text = html
+            resp.status = falcon.HTTP_200
+            resp.content_type = falcon.MEDIA_HTML
+            resp.text = html
+        except Exception as e:
+            print(f"Error in on_get: {e}")
+            resp.status = falcon.HTTP_500
+            resp.text = f"Internal Server Error: {e}"
 
 class IngestResource():
     async def on_post(self, req, resp):
-        data = await req.stream.readall()
-        data_json = json.loads(data)["data"]
-        resp.content_type = falcon.MEDIA_JSON
-        status = insert_data(data_json)
-        resp.text = {"status": "OK"}
-        resp.status = falcon.HTTP_200
-        if not status:
-            resp.text = {"status": "NOK"}
-            resp.status = falcon.HTTP_403
+        try:
+            data = await req.stream.readall()
+            data_json = json.loads(data)
+            status = insert_data(data_json["data"])
+            resp.status = falcon.HTTP_200
+            if not status:
+                resp.status = falcon.HTTP_403
+        except Exception as e:
+            print(f"Error in on_post: {e}")
+            resp.status = falcon.HTTP_500
+            resp.text = f"Internal Server Error: {e}"
 
 app = falcon.asgi.App()
 app.add_route('/', PlotResource())
