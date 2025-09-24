@@ -1,0 +1,7 @@
+__pycache__/
+.venv
+.python-version
+data.db
+uv.lock
+README.md
+Dockerfile

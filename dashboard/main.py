@@ -69,14 +69,14 @@ class PlotResource:
                 p = figure(
                     title=label,
                     x_axis_type='datetime',
-                    width=1000,
-                    height=500,
+                    width=800,
+                    height=300,
                     sizing_mode='scale_both',
                     tools="pan,wheel_zoom,box_zoom,reset,save",
                     active_drag="pan",
                     active_scroll="wheel_zoom"
                 )
-                p.line(pd.to_datetime(data['timestamp']), data[key].to_numpy(), line_width=20, color='green', alpha=0.8)
+                p.line(pd.to_datetime(data['timestamp']), data[key].to_numpy(), line_width=8, color='green', alpha=0.8)
                 p.scatter(pd.to_datetime(data['timestamp']), data[key], size=6, color='navy', alpha=0.6)
                 p.xaxis.axis_label = 'Time'
                 p.yaxis.axis_label = label
