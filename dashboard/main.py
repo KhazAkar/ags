@@ -1,7 +1,11 @@
+import json
 import sqlite3
-import falcon
-import pandas as pd
 from datetime import datetime
+
+import falcon
+import falcon.asgi
+import pandas as pd
+import uvicorn
 from bokeh.embed import components
 from bokeh.layouts import column
 from bokeh.plotting import figure
@@ -22,10 +26,9 @@ def init_db():
         conn.execute("""
         CREATE TABLE IF NOT EXISTS readings (
             timestamp TEXT,
-            pressure REAL,
+            soil_moisture REAL,
             light_intensity REAL,
             soil_temp REAL,
-            soil_moisture REAL,
             air_temp REAL,
             air_humidity REAL,
             air_pressure REAL
@@ -33,28 +36,30 @@ def init_db():
         """)
         conn.commit()
 
-# TODO: Fix insertion
-# def insert_data(data_line: str):
-#     moisture, light_intensity, soil_temp, air_temp, air_hum, pressure = data_line.split(',')
-#     timestamp = datetime.now().isoformat()
-#     with sqlite3.connect("data.db") as conn:
-#         _ = conn.execute("""
-#             INSERT INTO readings (timestamp, pressure, light_intensity, soil_temp, )VALUES(?, ?, ?, ?, ?, ?, ?)
-#             """,
-#         (timestamp, moisture, light_intensity, soil_temp, air_temp, air_hum, pressure))
-#         conn.commit()
+def insert_data(data_line: str) -> bool:
+    soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure = data_line.split(',')
+    timestamp = datetime.now().isoformat()
+    success = False
+    with sqlite3.connect("data.db") as conn:
+        _ = conn.execute("""
+            INSERT INTO readings (timestamp, soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure) VALUES(?, ?, ?, ?, ?, ?, ?)
+            """,
+        (timestamp, soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure))
+        conn.commit()
+        success = True
+    return success
 
 class PlotResource:
-    def on_get(self, req, resp):
+    async def on_get(self, req, resp):
         data = load_data()
         # Create bokeh plot to display
         sensors = {
-            'soil_moisture': 'Soil Moisture (%)',
+            'pressure': 'Air Pressure (hPa)',
             'light_intensity': 'Light Intensity (%)',
             'soil_temp': 'Soil Temperature (°C)',
+            'soil_moisture': 'Soil Moisture (%)',
             'air_temp': 'Air Temperature (°C)',
             'air_humidity': 'Air Humidity (%)',
-            'pressure': 'Air Pressure (hPa)',
         }
 
         plots = []
@@ -83,16 +88,21 @@ class PlotResource:
         resp.text = html
 
 class IngestResource():
-    def on_post(self, req, resp):
-
-
-
+    async def on_post(self, req, resp):
+        data = await req.stream.readall()
+        data_json = json.loads(data)["data"]
         resp.content_type = falcon.MEDIA_JSON
+        status = insert_data(data_json)
         resp.text = {"status": "OK"}
         resp.status = falcon.HTTP_200
+        if not status:
+            resp.text = {"status": "NOK"}
+            resp.status = falcon.HTTP_403
+
+app = falcon.asgi.App()
+app.add_route('/', PlotResource())
+app.add_route('/ingest', IngestResource())
 
 if __name__ == "__main__":
     init_db()
-    app = falcon.App()
-    app.add_route('/', PlotResource())
-    app.add_route('/ingest', IngestResource())
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
