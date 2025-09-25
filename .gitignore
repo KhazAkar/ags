@@ -10,3 +10,4 @@ fp-info-cache
 device/deviceDataLogger
 device/device
 data.db
+dashboard/.venv
