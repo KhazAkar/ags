@@ -6,11 +6,16 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"time"
 
 	"go.bug.st/serial"
 )
 
 const BUF_SIZE = 250
+
+var client = &http.Client{
+	Timeout: 10 * time.Second,
+}
 
 func main() {
 	serverFlag := flag.String("s", "http://wyse5070.local:9999/ingest", "Server URL")
@@ -47,7 +52,7 @@ func sendUARTDataToServer(addressStr string, data []byte) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	resp, err := http.Post(addressStr, "application/json", bytes.NewBuffer(jsonValue))
+	resp, err := client.Post(addressStr, "application/json", bytes.NewBuffer(jsonValue))
 	if err != nil {
 		log.Println("Error sending data to server:", err)
 		return
