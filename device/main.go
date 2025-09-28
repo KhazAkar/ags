@@ -20,7 +20,8 @@ var client = &http.Client{
 func main() {
 	serverFlag := flag.String("s", "http://wyse5070.local:9999/ingest", "Server URL")
 	portFlag := flag.String("p", "/dev/ttyAML6", "UART Port")
-	port := setUARTComms(*portFlag)
+	baudRateFlag := flag.Int("b", 9600, "UART Baud Rate") // Added baud rate flag
+	port := setUARTComms(*portFlag, *baudRateFlag)        // Pass baud rate to setUARTComms
 	buf := make([]byte, BUF_SIZE)
 	defer port.Close()
 	for {
@@ -35,9 +36,9 @@ func main() {
 	}
 }
 
-func setUARTComms(portStr string) serial.Port {
+func setUARTComms(portStr string, baudRate int) serial.Port {
 	mode := &serial.Mode{
-		BaudRate: 9600,
+		BaudRate: baudRate,
 	}
 	port, err := serial.Open(portStr, mode)
 	if err != nil {
