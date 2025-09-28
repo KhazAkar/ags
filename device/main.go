@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"flag"
 	"log"
 	"net/http"
 
@@ -10,10 +11,11 @@ import (
 )
 
 const BUF_SIZE = 250
-const SERVER = "http://wyse5070.local:9999/ingest"
 
 func main() {
-	port := setUARTComms("/dev/ttyAML6")
+	serverFlag := flag.String("s", "http://wyse5070.local:9999/ingest", "Server URL")
+	portFlag := flag.String("p", "/dev/ttyAML6", "UART Port")
+	port := setUARTComms(*portFlag)
 	buf := make([]byte, BUF_SIZE)
 	defer port.Close()
 	for {
@@ -23,7 +25,7 @@ func main() {
 			continue // Continue loop instead of exiting on error
 		}
 		if n > 0 {
-			sendUARTDataToServer(SERVER, buf[:n]) // Send only the read bytes
+			sendUARTDataToServer(*serverFlag, buf[:n]) // Send only the read bytes
 		}
 	}
 }
