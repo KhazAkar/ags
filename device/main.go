@@ -48,7 +48,8 @@ func setUARTComms(portStr string, baudRate int) serial.Port {
 }
 
 func sendUARTDataToServer(addressStr string, data []byte) {
-	jsonData := map[string]string{"data": string(data)}
+	dataToSend := string(time.Now().Format(time.RFC3339)) + "," + string(data)
+	jsonData := map[string]string{"data": dataToSend}
 	jsonValue, err := json.Marshal(jsonData)
 	if err != nil {
 		log.Fatal(err)

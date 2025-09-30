@@ -38,8 +38,7 @@ def init_db():
         conn.commit()
 
 def insert_data(data_line: str) -> bool:
-    soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure = data_line.split(',')
-    timestamp = datetime.now().isoformat()
+    timestamp, soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure = data_line.split(',')
     success = False
     with sqlite3.connect("data.db") as conn:
         _ = conn.execute("""
