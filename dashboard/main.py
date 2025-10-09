@@ -5,21 +5,35 @@ import falcon
 import falcon.asgi
 import pandas as pd
 import uvicorn
+from dataclasses import dataclass
 from bokeh.embed import components
 from bokeh.layouts import row
 from bokeh.plotting import figure
 from jinja2 import Environment, FileSystemLoader
 
 # Initialize Jinja2
-env = Environment(loader=FileSystemLoader('templates'))
-env.filters['zip'] = zip
+env = Environment(loader=FileSystemLoader("templates"))
+env.filters["zip"] = zip
+
+
+@dataclass
+class SensorData:
+    timestamp: str
+    soil_moisture: int
+    light_intensity: int
+    soil_temp: float
+    air_temp: float
+    air_humidity: float
+    air_pressure: float
+
 
 def load_data() -> pd.DataFrame:
     data = None
     with sqlite3.connect("data.db") as conn:
-        data = pd.read_sql('SELECT * FROM readings ORDER BY timestamp', conn)
-        data['timestamp'] = pd.to_datetime(data['timestamp'])
+        data = pd.read_sql("SELECT * FROM readings ORDER BY timestamp", conn)
+        data["timestamp"] = pd.to_datetime(data["timestamp"])
     return data
+
 
 def init_db():
     with sqlite3.connect("data.db") as conn:
@@ -36,17 +50,29 @@ def init_db():
         """)
         conn.commit()
 
-def insert_data(data_line: str) -> bool:
-    timestamp, soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure = data_line.split(',')
+
+def insert_data(json_data) -> bool:
     success = False
+    sensor_data = SensorData(**json_data)
     with sqlite3.connect("data.db") as conn:
-        _ = conn.execute("""
+        _ = conn.execute(
+            """
             INSERT INTO readings (timestamp, soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure) VALUES(?, ?, ?, ?, ?, ?, ?)
             """,
-        (timestamp, soil_moisture, light_intensity, soil_temp, air_temp, air_humidity, air_pressure))
+            (
+                sensor_data.timestamp,
+                sensor_data.soil_moisture,
+                sensor_data.light_intensity,
+                sensor_data.soil_temp,
+                sensor_data.air_temp,
+                sensor_data.air_humidity,
+                sensor_data.air_pressure,
+            ),
+        )
         conn.commit()
         success = True
     return success
+
 
 class PlotResource:
     async def on_get(self, req, resp):
@@ -54,29 +80,41 @@ class PlotResource:
             data = load_data()
             # Create bokeh plot to display
             sensors = {
-                'air_pressure': 'Air Pressure (hPa)',
-                'light_intensity': 'Light Intensity (%)',
-                'soil_temp': 'Soil Temperature (°C)',
-                'soil_moisture': 'Soil Moisture (%)',
-                'air_temp': 'Air Temperature (°C)',
-                'air_humidity': 'Air Humidity (%)',
+                "air_pressure": "Air Pressure (hPa)",
+                "light_intensity": "Light Intensity (%)",
+                "soil_temp": "Soil Temperature (°C)",
+                "soil_moisture": "Soil Moisture (%)",
+                "air_temp": "Air Temperature (°C)",
+                "air_humidity": "Air Humidity (%)",
             }
 
             plots = []
             for key, label in sensors.items():
                 p = figure(
                     title=label,
-                    x_axis_type='datetime',
+                    x_axis_type="datetime",
                     width=800,
                     height=300,
-                    sizing_mode='scale_both',
+                    sizing_mode="scale_both",
                     tools="pan,wheel_zoom,box_zoom,reset,save",
                     active_drag="pan",
-                    active_scroll="wheel_zoom"
+                    active_scroll="wheel_zoom",
                 )
-                p.line(pd.to_datetime(data['timestamp']), data[key].to_numpy(), line_width=8, color='green', alpha=0.8)
-                p.scatter(pd.to_datetime(data['timestamp']), data[key], size=6, color='navy', alpha=0.6)
-                p.xaxis.axis_label = 'Time'
+                p.line(
+                    pd.to_datetime(data["timestamp"]),
+                    data[key].to_numpy(),
+                    line_width=8,
+                    color="green",
+                    alpha=0.8,
+                )
+                p.scatter(
+                    pd.to_datetime(data["timestamp"]),
+                    data[key],
+                    size=6,
+                    color="navy",
+                    alpha=0.6,
+                )
+                p.xaxis.axis_label = "Time"
                 p.yaxis.axis_label = label
                 plots.append(p)
             # layout = gridplot(grid)
@@ -89,7 +127,7 @@ class PlotResource:
                 bokeh_scripts.append(script)
                 bokeh_divs.append(div)
 
-            tmpl = env.get_template('index.html')
+            tmpl = env.get_template("index.html")
             html = tmpl.render(bokeh_scripts=bokeh_scripts, bokeh_divs=bokeh_divs)
 
             resp.status = falcon.HTTP_200
@@ -100,12 +138,13 @@ class PlotResource:
             resp.status = falcon.HTTP_500
             resp.text = f"Internal Server Error: {e}"
 
-class IngestResource():
+
+class IngestResource:
     async def on_post(self, req, resp):
         try:
             data = await req.stream.readall()
             data_json = json.loads(data)
-            status = insert_data(data_json["data"])
+            status = insert_data(data_json)
             resp.status = falcon.HTTP_200
             if not status:
                 resp.status = falcon.HTTP_403
@@ -114,9 +153,10 @@ class IngestResource():
             resp.status = falcon.HTTP_500
             resp.text = f"Internal Server Error: {e}"
 
+
 app = falcon.asgi.App()
-app.add_route('/', PlotResource())
-app.add_route('/ingest', IngestResource())
+app.add_route("/", PlotResource())
+app.add_route("/ingest", IngestResource())
 
 if __name__ == "__main__":
     init_db()

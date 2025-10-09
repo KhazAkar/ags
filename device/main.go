@@ -22,11 +22,11 @@ var client = &http.Client{
 
 type SensorData struct {
 	Timestamp       string  `json:"timestamp"`
-	Moisture        int     `json:"moisture"`
-	Photo           int     `json:"photo"`
+	SoilMoisture    int     `json:"soil_moisture"`
+	LightIntensity  int     `json:"light_intensity"`
 	SoilTemperature float32 `json:"soil_temp"`
 	AirTemperature  float32 `json:"air_temp"`
-	AirHumidity     float32 `json:"air_hum"`
+	AirHumidity     float32 `json:"air_humidity"`
 	AirPressure     float32 `json:"air_pressure"`
 }
 
@@ -62,8 +62,8 @@ func setUARTComms(portStr string, baudRate int) serial.Port {
 
 func sendUARTDataToServer(addressStr string, data []byte) {
 	dataSplitted := strings.Split(string(data), ",")
-	moisture, err1 := strconv.Atoi(dataSplitted[0])
-	photo, err2 := strconv.Atoi(dataSplitted[1])
+	soilMoisture, err1 := strconv.Atoi(dataSplitted[0])
+	lightIntensity, err2 := strconv.Atoi(dataSplitted[1])
 	soilTemp, err3 := strconv.ParseFloat(dataSplitted[2], 0)
 	airTemp, err4 := strconv.ParseFloat(dataSplitted[3], 0)
 	airHum, err5 := strconv.ParseFloat(dataSplitted[4], 0)
@@ -77,8 +77,8 @@ func sendUARTDataToServer(addressStr string, data []byte) {
 
 	dataToSend := SensorData{
 		Timestamp:       ts,
-		Moisture:        moisture,
-		Photo:           photo,
+		SoilMoisture:    soilMoisture,
+		LightIntensity:  lightIntensity,
 		SoilTemperature: float32(soilTemp),
 		AirTemperature:  float32(airTemp),
 		AirHumidity:     float32(airHum),
