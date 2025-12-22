@@ -1,7 +1,16 @@
-FROM alpine:latest
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+# Build stage
+FROM cgr.dev/chainguard/wolfi-base:latest AS builder
+RUN apk add --no-cache go git
 WORKDIR /app
-RUN uv python install 3.13.7
-COPY . /app
-RUN uv sync
-CMD ["uv", "run", "main.py"]
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=1 GOOS=linux go build -a -installsuffix cgo -o main ./cmd/server
+
+# Runtime stage
+FROM cgr.dev/chainguard/glibc-dynamic:latest
+WORKDIR /app
+COPY --from=builder /app/main .
+COPY --from=builder /app/templates ./templates
+EXPOSE 8000
+CMD ["./main"]
