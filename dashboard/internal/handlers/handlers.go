@@ -75,6 +75,11 @@ func (h *Handler) Ingest(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+type ChartData struct {
+	ID   string
+	JSON string
+}
+
 func (h *Handler) Dashboard(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
@@ -94,7 +99,7 @@ func (h *Handler) Dashboard(w http.ResponseWriter, r *http.Request) {
 
 	// Render empty dashboard if no data
 	if len(readings) == 0 {
-		h.renderTemplate(w, "index.html", map[string]interface{}{"charts": []template.HTML{}})
+		h.renderTemplate(w, "index.html", map[string]interface{}{"charts": []ChartData{}})
 		return
 	}
 
@@ -107,7 +112,7 @@ func (h *Handler) Dashboard(w http.ResponseWriter, r *http.Request) {
 		createLineChart("Air Humidity (%)", readings, func(r models.SensorReading) float64 { return r.AirHumidity }),
 	}
 
-	var chartComponents []template.HTML
+	var chartComponents []ChartData
 	for i, chart := range chartList {
 		chartID := fmt.Sprintf("chart_%d", i)
 		chart.SetGlobalOptions(charts.WithInitializationOpts(opts.Initialization{
@@ -118,19 +123,16 @@ func (h *Handler) Dashboard(w http.ResponseWriter, r *http.Request) {
 		}))
 
 		// Render chart JSON
-		chartJSON, _ := json.Marshal(chart.JSON())
+		chartJSON, err := json.Marshal(chart.JSON())
+		if err != nil {
+			log.Printf("Error marshaling chart JSON: %v", err)
+			continue
+		}
 
-		// The original script logic was manual, but go-echarts helps a bit.
-		// However, to match the original template structure which expects HTML snippets:
-		script := fmt.Sprintf(
-			`<div id="%s" style="width:100%%;height:400px;"></div>
-			<script>
-				var %s = echarts.init(document.getElementById('%s'), 'westeros'); 
-				%s.setOption(%s);
-			</script>`,
-			chartID, chartID, chartID, chartID, string(chartJSON))
-
-		chartComponents = append(chartComponents, template.HTML(script))
+		chartComponents = append(chartComponents, ChartData{
+			ID:   chartID,
+			JSON: string(chartJSON),
+		})
 	}
 
 	h.renderTemplate(w, "index.html", map[string]any{"charts": chartComponents})
